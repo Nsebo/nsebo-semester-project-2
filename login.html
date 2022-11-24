@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semester Project 2 || Login Page</title>
     <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/js/login.js" defer></script>
 </head>
 <body>
 <header class="bg-white ">
@@ -102,14 +103,27 @@
                 <span class="text-sm">
                     or
                     <a href="signup.html" class="text-cyan-500"> Create a new account </a> </span>
-                <form class="mt-4">
+                <form  id="login-form"
+                        class="mt-4" >
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Email</label>
-                        <input type="email" placeholder="Enter your email" class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
+                        <input  id="email"  name="email"
+                                type="text" placeholder="Enter your email" class="appearance-none w-full rounded-md border border-gray-600 focus:border-cyan-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" required/>
+                        <span id="emailErrorNotValid" class="hidden text-sm text-red-500">
+              Email is not valid must be a valid stud.noroff.no or noroff.no
+              email address
+            </span>
+                        <span id="emailErrorMessage" class="hidden text-sm text-red-500">
+              Email is required
+            </span>
                     </div>
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Password</label>
-                        <input type="password" placeholder="password goes here" class="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
+                        <input id="password"  name="password"
+                                type="password" placeholder="Enter password" class="block w-full rounded-md border border-gray-600 focus:border-cyan-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"  required/>
+                        <span id="passwordErrorMessage" class="hidden text-sm text-red-500">
+              Password is required and must be over 8 chars
+            </span>
                     </div>
                     <div class="mb-3 flex flex-wrap content-center">
                         <a href="" class="text-sm font-sans font-medium text-gray-600 underline">
@@ -117,8 +131,12 @@
                         </a>
                     </div>
                     <div class="mb-3">
-                        <button class="mb-1.5 block w-full text-center text-white bg-cyan-500 hover:bg-gray-500 px-2 py-1.5 rounded-md">Sign in</button>
+                        <button class="mb-1.5 block w-full text-center text-white bg-cyan-500 hover:bg-black px-4 py-1.5 rounded-md">Sign in</button>
                     </div>
+                    <p
+                            id="form-error-message"
+                            class="capitalize text-3xl text-orange-200"
+                    ></p>
                 </form>
             </div>
         </div>
