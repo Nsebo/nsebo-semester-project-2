@@ -1,5 +1,9 @@
 import './style.css';
 
+import header from "./js/compenents/header";
+
+header()
+
 const btn = document.querySelector("button.sidebar-open")
 const menu = document.querySelector(".menu-resposive")
 const buttonOpen = document.querySelector(".btn-open")
@@ -18,3 +22,4 @@ const formSearch = document.querySelector(".search-form")
 buttonMenu.addEventListener("click", () => {
    formSearch.classList.toggle("hidden")
 })
+
