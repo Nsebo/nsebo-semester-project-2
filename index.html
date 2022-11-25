@@ -106,40 +106,43 @@
 
   <main>
 
-    <section
-            class="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
-      <div
-              class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
+    <div class="container my-24 px-6 mx-auto">
 
-      <div
-              class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
-      >
-        <div class="max-w-xl text-center sm:text-left">
-          <h1 class="text-1xl font-bold sm:text-5xl">
-            FIND YOUR NEXT DEAL!
-          </h1>
+      <!-- Section: Design Block -->
+      <section class="mb-32 text-gray-800 text-center md:text-left">
 
-          <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio magna cras in elementum auctor. Ultrices id cum nisl orci mauris. Ipsum quam euismod ullamcorper scelerisque.
-          </p>
+        <div class="block rounded-lg shadow-lg bg-white">
+          <div class="flex flex-wrap items-center">
+            <div class="grow-0 shrink-0 basis-auto block lg:flex w-full md:w-4/12">
+              <img src="img/audi-r8.jpg" alt="an image of a black audi r8"
+                   class="w-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg" />
+            </div>
+            <div class="grow-0 shrink-0 basis-auto w-full md:w-8/12">
+              <div class="px-6 py-12 md:px-12">
+                <h2 class="text-3xl font-bold mb-6">
+                  <span class="text-cyan-600">FIND YOUR NEXT DEAL!</span>
+                </h2>
+                <p class="text-gray-500 mb-6 pb-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio magna cras in elementum auctor. Ultrices id cum nisl orci mauris. Ipsum quam euismod ullamcorper scelerisque.
+                </p>
+                <button type="button"
+                        class="inline-block px-7 py-3 bg-black text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true" data-mdb-ripple-color="light">Bid Now</button>
+                <button type="button"
+                        class="inline-block px-7 py-3 bg-cyan-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-500 active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true" data-mdb-ripple-color="light">Learn more</button>
 
-          <div class="mt-8 flex flex-wrap gap-4 text-center">
-            <a
-                    href="#"
-                    class="block w-full rounded bg-cyan-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-black focus:outline-none focus:ring active:bg-black sm:w-auto"
-            >
-              BID NOW
-            </a>
-
-
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+      </section>
+    </div>
 
     <div class="container my-24 px-6 mx-auto">
       <section class="mb-32 text-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-12 pb-4 text-center">Latest Auctions</h2>
+        <h2 class="text-3xl font-bold mb-12 pb-4 text-center">Featured Auctions</h2>
         <div class="grid lg:grid-cols-3 gap-6 xl:gap-x-12">
           <div class="mb-6 lg:mb-0">
             <div class="relative block bg-white rounded-lg shadow-lg">
