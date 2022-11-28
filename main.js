@@ -5,7 +5,7 @@ import header from "./js/compenents/header";
 header()
 
 const btn = document.querySelector("button.sidebar-open")
-const menu = document.querySelector(".menu-resposive")
+const menu = document.querySelector(".menu-responsive")
 const buttonOpen = document.querySelector(".btn-open")
 const buttonClose = document.querySelector(".btn-close")
 
@@ -25,24 +25,24 @@ buttonMenu.addEventListener("click", () => {
 
 // dropdown toggle
 
-var menu2 = document.getElementById("menu2");
+var menuTwo = document.getElementById("menuTwo");
 document.getElementById("toggleId").onclick = function() {toggleMenu()};
 
 // open/close the menu when the user clicks on the button
 function toggleMenu() {
 
    console.log("toggleMenu called");
-   if (menu2.classList.contains('hidden')) {
-      menu2.classList.remove('hidden');
+   if (menuTwo.classList.contains('hidden')) {
+      menuTwo.classList.remove('hidden');
    } else {
-      menu2.classList.add('hidden');
+      menuTwo.classList.add('hidden');
    }
 }
 
 // close the menu when the user clicks outside of it
 window.onclick = function (event) {
    var dropdownWrapper = document.getElementById('dropdown-wrapper');
-   if (!dropdownWrapper.contains(event.target) && !menu2.classList.contains('hidden')) {
-      menu2.classList.add('hidden');
+   if (!dropdownWrapper.contains(event.target) && !menuTwo.classList.contains('hidden')) {
+      menuTwo.classList.add('hidden');
    }
 }
