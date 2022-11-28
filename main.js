@@ -25,10 +25,13 @@ buttonMenu.addEventListener("click", () => {
 
 // dropdown toggle
 
-var menu2 = document.getElementById("menu");
+var menu2 = document.getElementById("menu2");
+document.getElementById("toggleId").onclick = function() {toggleMenu()};
 
 // open/close the menu when the user clicks on the button
 function toggleMenu() {
+
+   console.log("toggleMenu called");
    if (menu2.classList.contains('hidden')) {
       menu2.classList.remove('hidden');
    } else {

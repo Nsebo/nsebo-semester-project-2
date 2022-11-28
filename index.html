@@ -57,24 +57,18 @@
             </li>
 
             <li id="dropdown-wrapper" class="inline-block">
-              <a onclick="toggleMenu()"
-                      class="px-10 py-3 bg-black hover:bg-cyan-600 focus:bg-cyan-500 text-white">
-                <i class="fa-solid fa-angle-down"></i>
-                Profile</a>
-              <div id="menu" class="hidden flex flex-col bg-white drop-shadow-md">
-                <a href="#" class="dropdown-item">Nsebo
-                  <img class="h-10 w-10 rounded-full" src="img/avatar-ali.png" alt=""/>
+              <button id="toggleId"
+                      class="px-10 py-3 bg-white hover:bg-cyan-600 focus:bg-cyan-500 text-white">
+                <img class="h-10 w-10 rounded-full" src="img/avatar-ali.png" alt=""/>
+              </button>
+              <div id="menu2" class="hidden flex flex-col bg-white drop-shadow-md">
+                <a href="#" class="dropdown-item">Profile
+
                 </a>
                 <a href="#" class="dropdown-item">LogOut</a>
               </div>
             </li>
-            <li class="text-lg md:text-base lg:text-lg font-medium group">
-              <a class="block p-2.5" onclick="myFunction()" class="dropdown-toggle ">
-              </a>
-              <div
-                      class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
-              </div>
-            </li>
+
           </ul>
 
         </div>
@@ -105,12 +99,8 @@
   </header>
 
   <main>
-
     <div class="container my-24 px-6 mx-auto">
-
-      <!-- Section: Design Block -->
       <section class="mb-32 text-gray-800 text-center md:text-left">
-
         <div class="block rounded-lg shadow-lg bg-white">
           <div class="flex flex-wrap items-center">
             <div class="grow-0 shrink-0 basis-auto block lg:flex w-full md:w-4/12">
@@ -137,85 +127,6 @@
           </div>
         </div>
 
-      </section>
-    </div>
-
-    <div class="container my-24 px-6 mx-auto">
-      <section class="mb-32 text-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-12 pb-4 text-center">Featured Auctions</h2>
-        <div class="grid lg:grid-cols-3 gap-6 xl:gap-x-12">
-          <div class="mb-6 lg:mb-0">
-            <div class="relative block bg-white rounded-lg shadow-lg">
-              <div class="flex">
-                <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
-                     data-mdb-ripple="true" data-mdb-ripple-color="light">
-                  <img src="img/ferrari.jpg" />
-                  <a href="#">
-                  </a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h5 class="font-bold text-lg mb-3">Audi Q4 Sportback e-tron</h5>
-                <p class="mb-4 pb-2">
-                  Current Bid : 8000000NOK
-                </p>
-                <p class="mb-4 pb-2 text-red-500">
-                  Ends in 3 hours,  20 Minutes
-                </p>
-                <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                   class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-500 active:shadow-lg transition duration-150 ease-in-out">View item</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6 lg:mb-0">
-            <div class="relative block bg-white rounded-lg shadow-lg">
-              <div class="flex">
-                <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
-                     data-mdb-ripple="true" data-mdb-ripple-color="light">
-                  <img src="img/audi-r8.jpg" />
-                  <a href="#">
-                  </a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h5 class="font-bold text-lg mb-3">Audi Q4 Sportback e-tron</h5>
-                <p class="mb-4 pb-2">
-                  Current Bid : 8000000NOK
-                </p>
-                <p class="mb-4 pb-2 text-red-500">
-                  Ends in 3 hours,  20 Minutes
-                </p>
-                <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                   class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-500 active:shadow-lg transition duration-150 ease-in-out">View item</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6 lg:mb-0">
-            <div class="relative block bg-white rounded-lg shadow-lg">
-              <div class="flex">
-                <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
-                     data-mdb-ripple="true" data-mdb-ripple-color="light">
-                  <img src="img/ferrari.jpg" />
-                  <a href="#">
-                  </a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h5 class="font-bold text-lg mb-3">Audi Q4 Sportback e-tron</h5>
-                <p class="mb-4 pb-2">
-                  Current Bid : 8000000NOK
-                </p>
-                <p class="mb-4 pb-2 text-red-500">
-                  Ends in 3 hours,  20 Minutes
-                </p>
-                <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                   class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-500 active:shadow-lg transition duration-150 ease-in-out">View item</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
 
