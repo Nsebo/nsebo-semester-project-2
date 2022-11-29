@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <title>Semester Project 2</title>
-    <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/js/main.js" defer></script>
 </head>
 <body>
 <header class="bg-white ">
@@ -32,7 +32,7 @@
                 Auct-<span class="text-cyan-500">ion</span>
             </a>
             <div
-                    class="menu-resposive hidden fixed flex inset-0 transition-all bg-white/70 backdrop-blur-xl z-20 md:static md:bg-transparent md:flex items-center justify-center space-y-8 md:space-y-0 flex-col md:flex-row md:space-x-8 -mt-56 md:mt-0 ">
+                    class="menu-responsive hidden fixed flex inset-0 transition-all bg-white/70 backdrop-blur-xl z-20 md:static md:bg-transparent md:flex items-center justify-center space-y-8 md:space-y-0 flex-col md:flex-row md:space-x-8 -mt-56 md:mt-0 ">
                 <ul class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 lg:md:-x-8">
                     <li class="text-lg md:text-base lg:text-lg font-medium group text-cyan-500">
                         <a href="index.html">Home
@@ -44,37 +44,29 @@
                     <li class="text-lg md:text-base lg:text-lg font-medium group">
                         <a href="products.html">Products
                         </a>
-                        <div
-                                class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+                        <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
                         </div>
                     </li>
                     <li class="text-lg md:text-base lg:text-lg font-medium group">
-                        <a href="#">Add new product
+                        <a href="create-listing.html">Add new product
                         </a>
                         <div
                                 class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
                         </div>
                     </li>
 
-                    <li id="dropdown-wrapper" class="inline-block">
-                        <a onclick="toggleMenu()"
-                           class="px-10 py-3 bg-black hover:bg-cyan-600 focus:bg-cyan-500 text-white">
-                            <i class="fa-solid fa-angle-down"></i>
-                            Profile</a>
-                        <div id="menu" class="hidden flex flex-col bg-white drop-shadow-md">
-                            <a href="#" class="dropdown-item">Nsebo
-                                <img class="h-10 w-10 rounded-full" src="img/avatar-ali.png" alt=""/>
+                    <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
+                        <button id="toggleId"
+                                class="px-10 py-5 bg-white  text-white">
+                            <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
+                        </button>
+                        <div id="menuTwo" class="hidden flex flex-col bg-gray-100 drop-shadow-md absolute top-16 left-5 p-4">
+                            <a href="#" class="dropdown-item">Profile
                             </a>
                             <a href="#" class="dropdown-item">LogOut</a>
                         </div>
                     </li>
-                    <li class="text-lg md:text-base lg:text-lg font-medium group">
-                        <a class="block p-2.5" onclick="myFunction()" class="dropdown-toggle ">
-                        </a>
-                        <div
-                                class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
-                        </div>
-                    </li>
+
                 </ul>
 
             </div>

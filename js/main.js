@@ -1,6 +1,6 @@
-import './style.css';
+import '../CSS/style.css';
 
-import header from "./js/compenents/header";
+import header from "./compenents/header";
 
 header()
 
