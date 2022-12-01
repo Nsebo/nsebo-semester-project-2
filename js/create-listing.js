@@ -1,4 +1,5 @@
 import {CREATE_LISTING_URL, LOGIN_USER_URL} from "./settings/api";
+import {getToken} from "./utils/storage";
 
 const createListingForm = document.querySelector("#create-listing-form");
 
@@ -11,6 +12,7 @@ const listImgOne = document.querySelector("#listImgOne");
 const listImgTwo = document.querySelector("#listImgTwo");
 const listImgThree = document.querySelector("#listImgThree");
 const listingEndDate = document.querySelector("#listingEndDate");
+const accessToken = getToken();
 
 
 createListingForm.addEventListener("submit", function (event) {
@@ -46,7 +48,7 @@ createListingForm.addEventListener("submit", function (event) {
             method: "POST",
             headers: {
                 "content-Type": "application/json",
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsIm5hbWUiOiJuc2VibyIsImVtYWlsIjoiZnJ1a2xlbTE2QHN0dWQubm9yb2ZmLm5vIiwiYXZhdGFyIjpudWxsLCJjcmVkaXRzIjoxMDAwLCJ3aW5zIjpbXSwiaWF0IjoxNjY5NzIxMTcwfQ.X-5NI3hmYOsZl_ZORaeDcKR7jo-w-lDzCKmW21NtxPw`,
+                Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify(listingData),
         })

@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <title>Semester Project 2</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script type="module" src="/js/main.js" defer></script>
+    <script type="module" src="/js/products.js" defer></script>
+    <script type="module" src="/js/single-listing.js" defer></script>
+
 </head>
 <body>
 <header class="bg-white ">
@@ -95,144 +100,62 @@
         </div>
     </navbar>
 </header>
+<div class="py-6">
+    <div class="flex flex-col gap-4 sm:flex-row justify-center">
+        <h2 class=" text-black text-3xl font-bold">Latest Bids</h2>
+        <div class="flex items-center">
+            <div class="inline-block relative w-64">
+                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <option>Years</option>
+                    <option value="1990">2000</option>
+                    <option value="1991">2001</option>
+                    <option value="1992">2002</option>
 
-<main>
-
-    <div class="container my-12 px-6 mx-auto">
-        <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h2 class="bg-cyan-500 text-white text-3xl font-bold min-w-full text-center">Latest Bids</h2>
-            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
+            </div>
+            <div class="inline-block relative w-64">
+                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <option>Type</option>
+                    <option>All</option>
+                    <option>Tesla</option>
+                    <option>Audi</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                        <img src="img/audi.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">White Audi</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">$6,400</p>
-                            <p class="text-sm  text-gray-500"> Current Bid : 8000000NOK</p>
-                            <p class="text-sm text-red-500"><ion-icon name="time-outline"></ion-icon> Ends in 3 hrs,  20 Mins</p>
-                        </div>
-                        <div><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></div>
-                    </div>
+            </div>
+            <div class="inline-block relative w-64">
+                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <option>Transmission</option>
+                    <option>All</option>
+                    <option>Automatic</option>
+                    <option>Manual</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
         </div>
+
     </div>
+</div>
+</div>
+
+
+
+<main>
+    <div class="container my-12 px-6 mx-auto">
+        <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+
+            <ul id="posts-container" class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+            </ul>
+        </div>
+    </div>
+    <div id="general-error" class="text-2xl py-3.5 text-red-500 text-center hidden"></div>
 </main>
 
 

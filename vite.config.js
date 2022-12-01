@@ -8,6 +8,7 @@ export default {
                 signup: resolve(__dirname, "signup.html"),
                 login: resolve(__dirname, "login.html"),
                 createListing: resolve(__dirname, "create-listing.html"),
+                listingDetails: resolve(__dirname, "listing-details.html"),
             },
         },
     },

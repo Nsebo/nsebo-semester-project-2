@@ -10,7 +10,6 @@ function getToken() {
   const myToken = getFromStorage("token");
   return myToken;
 }
-
 function saveUser(user) {
   localStorage.setItem("user", JSON.stringify(user));
 }
