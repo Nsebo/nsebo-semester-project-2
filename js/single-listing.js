@@ -37,7 +37,7 @@ async function getListById() {
         }
     })
     if (!accessToken) {
-     //   location.href = '/products.html';
+       location.href = '/login.html';
     }
     console.log(response);
     const data = await response.json();
@@ -52,9 +52,9 @@ async function getListById() {
 
     listingDetails.innerHTML = `
   
-<div class="group relative">
+<li class="group relative">
                     <a href="/single-listing.html?listings_id=${data.id}">
-                        <img src="img/audi.jpg" alt="an image of white audi." class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${listMedia}">
+                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${listMedia}" alt="">
                          </a>
                     <div class="mt-4 flex justify-between">
                         <div>
@@ -68,7 +68,7 @@ async function getListById() {
                         </div>
                         <a href="/single-listing.html"><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></a>
                     </div>
-                </div>
+                </li>
     `;
 
 }

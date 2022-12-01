@@ -39,7 +39,7 @@ const accessToken = getToken();
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                    <a href="/listing-details.html?listings_id=${post.id}">
-                        <img  alt="an image of white audi." class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}">
+                        <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}" alt="">
                          </a>
                    
                     </div>
