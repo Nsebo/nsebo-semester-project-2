@@ -5,13 +5,16 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <title>Create Product || Semester Project 2</title>
+  <title>Semester Project 2</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="/js/main.js" defer></script>
+  <script type="module" src="/js/products.js" defer></script>
   <script type="module" src="/js/single-listing.js" defer></script>
+
 </head>
-<body class=" ">
+<body>
 <header class="bg-white ">
   <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100" id="nav-bar">
     <nav class="flex justify-between items-center py-8 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24">
@@ -47,8 +50,7 @@
           <li class="text-lg md:text-base lg:text-lg font-medium group">
             <a href="products.html">Products
             </a>
-            <div
-                    class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+            <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
             </div>
           </li>
           <li class="text-lg md:text-base lg:text-lg font-medium group">
@@ -61,14 +63,20 @@
 
           <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
             <button id="toggleId"
-                    class="px-10 py-5 bg-white  text-white">
+                    class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
               <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
             </button>
-            <div id="menuTwo" class="hidden flex flex-col bg-gray-100 drop-shadow-md absolute top-16 left-5 p-4">
-              <a href="#" class="dropdown-item">Profile
-              </a>
-              <a href="#" class="dropdown-item">LogOut</a>
-            </div>
+            <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-16 left-5 p-4">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+                Signed in as <br> <span class="font-medium">Nsebo</span></a>
+                <a class="block dropdown-item px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
+                   href="#">My Profile</a>
+                <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                   href="#">Edit Profile</a>
+                <div class="border-b"></div>
+                <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                   href="#">Logout</a>
+              </div>
           </li>
 
         </ul>
@@ -93,73 +101,12 @@
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
-                class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
+                id="search" class="w-full bg-gray-200 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
                 type="text" placeholder="search cars..." />
       </div>
     </div>
   </navbar>
 </header>
-
-<main class="container mx-auto">
-  <div class="search-form hidden flex items-center space-x-4 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24 transform duration-500 transition-all">
-    <div class="flex bg-gray-200 p-2 w-full space-x-2 rounded-lg items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 opacity-75 ml-4" fill="none" viewBox="0 0 24 24"
-           stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-      <input
-              class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
-              type="text" placeholder="search cars..." />
-    </div>
-  </div>
-  <h2 class="text-2xl text-black underline">Car Details</h2>
-
-    <ul  id="listing-container" class="p-8 ">
-      <li>
-        <span>Title: </span>
-        <span id="list-title"></span>
-      </li>
-      <li >
-        <span>Id: </span>
-        <span id="list-id"></span>
-
-      </li>
-
-      <li>
-        <span>Desc: </span>
-        <span  id="list-desc"></span>
-
-      </li>
-
-      <li>
-        <span>Bids: </span>
-        <span id="list-bids"></span>
-
-      </li>
-
-      <li>
-        <span>Media: </span>
-        <span id="list-media"></span>
-
-      </li>
-
-      <li>
-        <span>EndsAt: </span>
-        <span id="list-endsAt"></span>
-
-      </li>
-
-      <li>
-        <span>Tags: </span>
-        <span id="list-tags"></span>
-
-      </li>
-    </ul>
-
-  <div id="general-error" class="text-2xl py-3.5 text-red-500 text-center hidden"></div>
-
-</main>
 
 
 

@@ -113,55 +113,34 @@
               type="text" placeholder="search cars..." />
     </div>
   </div>
-  <h2 class="text-2xl text-black underline">Car Details</h2>
+  <h2 class="text-2xl text-black underline">Bid here</h2>
 
-    <ul  id="listing-container" class="p-8 ">
-      <li>
-        <span>Title: </span>
-        <span id="list-title"></span>
-      </li>
-      <li >
-        <span>Id: </span>
-        <span id="list-id"></span>
 
-      </li>
 
-      <li>
-        <span>Desc: </span>
-        <span  id="list-desc"></span>
 
-      </li>
+  <form
+          id="bidding-form"
+          class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-80 text-left bg-cyan-500 rounded-md border shadow">
+    <h2 class="mb-4 text-2xl font-semibold text-gray-700 underline">BID ON THIS LISTING </h2>
 
-      <li>
-        <span>Bids: </span>
-        <span id="list-bids"></span>
+    <div class="flex flex-col gap-y-1">
+      <label for="listing-bid-input" class="text-gray-600">Listing Bid Amount </label>
+      <input
+              id="listing-bid-input"
+              class="p-2 rounded-md"
+              name="listingBidInput"
+              type="number"
+              placeholder="Enter a bid amount">
+    </div>
 
-      </li>
-
-      <li>
-        <span>Media: </span>
-        <span id="list-media"></span>
-
-      </li>
-
-      <li>
-        <span>EndsAt: </span>
-        <span id="list-endsAt"></span>
-
-      </li>
-
-      <li>
-        <span>Tags: </span>
-        <span id="list-tags"></span>
-
-      </li>
-    </ul>
-
+   <button class="justify-center capitalize inline-flex items-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+            type="submit">
+      BID
+    </button>
+  </form>
   <div id="general-error" class="text-2xl py-3.5 text-red-500 text-center hidden"></div>
 
 </main>
-
-
 
 <footer class="bg-white" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>

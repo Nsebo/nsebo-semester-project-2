@@ -29,7 +29,7 @@ console.log(listTags)
 
 
 async function getListById() {
-    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}`, {
+    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/01aab2d2-0448-457b-b409-72274e24c7ed?_seller=true&_bids=true/${listingId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ async function getListById() {
                             <p class="text-sm  text-gray-500"> ${listEndsAt}</p>
                             <p class="text-sm  text-gray-500">${listBids} </p>
                         </div>
-                        <a href="/single-listing.html"><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Bid</button></a>
+                        <a href="/create-bid.html"><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Place Bid</button></a>
                     </div>
                 </li>
     `;
