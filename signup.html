@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="bg-white ">
-  <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100">
+  <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100" id="nav-bar">
     <nav class="flex justify-between items-center py-8 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24">
       <button
               class="sidebar-open block md:hidden relative z-30 focus:outline-none transform  -translate-x-1/2 -translate-y-1/2 active:scale-75 transition-transform">
@@ -28,13 +28,13 @@
                 clip-rule="evenodd" />
         </svg>
       </button>
-      <a href="#" class="text-3xl md:text-4xl font-bold tracking-wide">
+      <a href="index.html" class="text-2xl md:text-2xl font-bold tracking-wide">
         Auct-<span class="text-cyan-500">ion</span>
       </a>
       <div
-              class="menu-resposive hidden fixed flex inset-0 transition-all bg-white/70 backdrop-blur-xl z-20 md:static md:bg-transparent md:flex items-center justify-center space-y-8 md:space-y-0 flex-col md:flex-row md:space-x-8 -mt-56 md:mt-0 ">
+              class="menu-responsive hidden fixed flex inset-0 transition-all bg-white/70 backdrop-blur-xl z-20 md:static md:bg-transparent md:flex items-center justify-center space-y-8 md:space-y-0 flex-col md:flex-row md:space-x-8 -mt-56 md:mt-0 ">
         <ul class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 lg:md:-x-8">
-          <li class="text-lg md:text-base lg:text-lg font-medium group text-black">
+          <li class="text-lg md:text-base lg:text-lg font-medium group text-cyan-500">
             <a href="index.html">Home
             </a>
             <div
@@ -42,36 +42,44 @@
             </div>
           </li>
           <li class="text-lg md:text-base lg:text-lg font-medium group">
-            <a href="#">Products
+            <a href="products.html">Products
             </a>
-            <div
-                    class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+            <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
             </div>
           </li>
           <li class="text-lg md:text-base lg:text-lg font-medium group">
-            <a href="#">Add new product
+            <a href="create-listing.html">Add new product
             </a>
             <div
                     class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
             </div>
           </li>
-          <li class="text-lg md:text-base lg:text-lg font-medium group">
-            <a href="#">Profile
-            </a>
-            <div
-                    class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+
+          <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
+            <button id="toggleId"
+                    class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
+              <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
+            </button>
+            <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-16 left-5 p-4">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+                Signed in as <br> <span class="font-medium">Nsebo</span></a>
+              <a class="block dropdown-item px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
+                 href="#">My Profile</a>
+              <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                 href="#">Edit Profile</a>
+              <div class="border-b"></div>
+              <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                 href="#">Logout</a>
             </div>
           </li>
+
         </ul>
-        <div>
-          <button>
-            <a href="login.html" class="ml-6 inline-flex items-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Login</a>
-          </button>
-        </div>
+
       </div>
       </div>
       </div>
-      <button class="search-menu flex justify-center items-center h-12 px-5 font-medium text-gray-100 bg-cyan-500 whitespace-nowrap hover:bg-black hover:text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none">
+      <button class="search-menu flex justify-center items-center h-12 px-5 font-medium text-gray-100 bg-cyan-500 whitespace-nowrap hover:bg-black hover:text-white
+    rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-500 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
                 d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -87,7 +95,7 @@
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
-                class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
+                id="search" class="w-full bg-gray-200 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
                 type="text" placeholder="search cars..." />
       </div>
     </div>

@@ -47,8 +47,7 @@
           <li class="text-lg md:text-base lg:text-lg font-medium group">
             <a href="products.html">Products
             </a>
-            <div
-                    class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+            <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
             </div>
           </li>
           <li class="text-lg md:text-base lg:text-lg font-medium group">
@@ -61,13 +60,19 @@
 
           <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
             <button id="toggleId"
-                    class="px-10 py-5 bg-white  text-white">
+                    class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
               <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
             </button>
-            <div id="menuTwo" class="hidden flex flex-col bg-gray-100 drop-shadow-md absolute top-16 left-5 p-4">
-              <a href="#" class="dropdown-item">Profile
-              </a>
-              <a href="#" class="dropdown-item">LogOut</a>
+            <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-16 left-5 p-4">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+                Signed in as <br> <span class="font-medium">Nsebo</span></a>
+              <a class="block dropdown-item px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
+                 href="#">My Profile</a>
+              <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                 href="#">Edit Profile</a>
+              <div class="border-b"></div>
+              <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                 href="#">Logout</a>
             </div>
           </li>
 
@@ -93,7 +98,7 @@
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
-                class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
+                id="search" class="w-full bg-gray-200 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
                 type="text" placeholder="search cars..." />
       </div>
     </div>
