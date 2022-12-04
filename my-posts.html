@@ -5,11 +5,11 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <title>Create Product || Semester Project 2</title>
+  <title>My Posts|| Semester Project 2</title>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="/js/main.js" defer></script>
-  <script type="module" src="/js/single-listing.js" defer></script>
+  <script type="module" src="/js/my-posts.js" defer></script>
 </head>
 <body class=" ">
 <header class="bg-white ">
@@ -113,71 +113,19 @@
     </div>
   </navbar>
 </header>
+<main>
+  <div class="container my-12 px-6 mx-auto">
+    <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 
-<main class="container mx-auto">
-  <div class="search-form hidden flex items-center space-x-4 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24 transform duration-500 transition-all">
-    <div class="flex bg-gray-200 p-2 w-full space-x-2 rounded-lg items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 opacity-75 ml-4" fill="none" viewBox="0 0 24 24"
-           stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-      <input
-              class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
-              type="text" placeholder="search cars..." />
+      <ul id="posts-container" class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+      </ul>
     </div>
   </div>
-  <h2 class="text-2xl text-black underline">Car Details</h2>
-
-    <ul  id="listing-container" class="p-8 ">
-      <li>
-        <span>Title: </span>
-        <span id="list-title"></span>
-      </li>
-      <li >
-        <span>Id: </span>
-        <span id="list-id"></span>
-
-      </li>
-
-      <li>
-        <span>Desc: </span>
-        <span  id="list-desc"></span>
-
-      </li>
-
-      <li>
-        <span>Bids: </span>
-        <span id="list-bids"></span>
-
-      </li>
-
-      <li>
-        <span>Media: </span>
-        <span id="list-media"></span>
-
-      </li>
-
-      <li>
-        <span>EndsAt: </span>
-        <span id="list-endsAt"></span>
-
-      </li>
-
-      <li>
-        <span>Tags: </span>
-        <span id="list-tags"></span>
-
-      </li>
-    </ul>
-
   <div id="general-error" class="text-2xl py-3.5 text-red-500 text-center hidden"></div>
-
 </main>
 
-
-
-<footer class="bg-white" aria-labelledby="footer-heading">
+<footer class="bg-white  " aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
