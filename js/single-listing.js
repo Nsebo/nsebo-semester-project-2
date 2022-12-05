@@ -1,4 +1,4 @@
-import {GET_LISTINGS_BY_ID_URL} from "./settings/api";
+
 import {getToken} from "./utils/storage";
 
 const paramString = window.location.search;
@@ -29,7 +29,7 @@ console.log(listTags)
 
 
 async function getListById() {
-    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/01aab2d2-0448-457b-b409-72274e24c7ed?_seller=true&_bids=true/${listingId}`, {
+    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

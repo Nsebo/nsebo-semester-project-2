@@ -12,7 +12,6 @@
     <script type="module" src="/js/index.js" defer></script>
 
   </head>
-  <body>
   <header class="bg-white ">
     <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100" id="nav-bar">
       <nav class="flex justify-between items-center py-8 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24">
@@ -45,6 +44,12 @@
                       class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
               </div>
             </li>
+            <li class="text-lg md:text-base lg:text-lg font-medium group">
+              <a href="products.html">All Products
+              </a>
+              <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
+              </div>
+            </li>
             <li class="text-lg md:text-base lg:text-lg font-medium group text-cyan-500">
               <a href="my-posts.html">My Products
               </a>
@@ -53,12 +58,7 @@
               </div>
             </li>
 
-            <li class="text-lg md:text-base lg:text-lg font-medium group">
-              <a href="products.html">All Products
-              </a>
-              <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
-              </div>
-            </li>
+
             <li class="text-lg md:text-base lg:text-lg font-medium group ">
               <a href="create-listing.html">Sell
               </a>
@@ -70,18 +70,23 @@
 
             <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
               <button id="toggleId"
-                      class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-cyan-500 focus:outline-none focus:shadow-outline">
-                <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
+                      class="flex flex-row items-center space-x-2 w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-cyan-500 focus:outline-none focus:shadow-outline">
+                <div class="flex gap-4 items-center">
+                  <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
+                  <span class="font-bold">500 NOK</span>
+                </div>
+
               </button>
-              <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-16 left-5 p-6">
-                <a href="#" class="block dropdown-item px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline">
-                  Signed in as  <span class="font-medium">Nsebo</span></a>
-                <a class="block dropdown-item px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
+              <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-15 left-4 p-2">
+                <a href="#" class="block dropdown-item px-1 py- mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline">
+                  Signed in as  <span class="font-medium">Nsebo</span>
+                </a>
+                <a class="block dropdown-item px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
                    href="#">My Profile</a>
-                <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                    href="edit-profile.html">Edit Profile</a>
                 <div class="border-b"></div>
-                <a class=" dropdown-item block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                    href="#">Logout</a>
               </div>
             </li>
@@ -113,11 +118,12 @@
         </div>
       </div>
     </navbar>
-  </header>
+  </header>  <body>
+
 
   <main>
-    <div class=" my-12 px-6 ">
-      <section class="mb-32 text-gray-800 text-center md:text-left">
+    <div class=" my-4 px-6 ">
+      <section class="mb-8 text-gray-800 text-center md:text-left">
         <div class="block  bg-white">
           <div class="flex flex-wrap items-center">
             <div class="grow-0 shrink-0 basis-auto block lg:flex w-full md:w-4/12">
@@ -131,7 +137,7 @@
                 </h2>
                 <p class="text-gray-500 mb-6 pb-2">
                   With us, you can easily and securely sell your items. Our online auctions reach bidders from all over the world. Many bidders means more bids and often a higher price for your item.                </p>
-                <a href="single-listing.html"><button type="button"
+                <a href="create-bid.html"><button type="button"
                                                       class="inline-block px-7 py-3 bg-black text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-150 ease-in-out"
                                                       data-mdb-ripple="true" data-mdb-ripple-color="light">Bid Now</button></a>
                 <button type="button"
@@ -142,16 +148,16 @@
             </div>
           </div>
         </div>
-
       </section>
     </div>
-    <div class="container my-12 px-6 mx-auto">
-      <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="bg-cyan-500 text-white text-3xl font-bold min-w-full text-center">Latest Bids</h2>
+    <div class="container my-4 px-6 mx-auto">
+      <div class="mx-auto max-w-2xl py-2 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-2">
+        <h2 class=" text-black text-3xl font-bold min-w-full text-left">Latest Bids</h2>
+        <a href="products.html"><p class=" text-cyan-500 text-medium  underline min-w-full text-right">View all</p></a>
 
       </div>
 
-        <div class="container my-12 px-6 mx-auto">
+        <div class="container my-12 mx-auto">
           <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 
             <ul id="posts-container" class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

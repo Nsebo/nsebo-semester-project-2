@@ -1,6 +1,6 @@
 import moment from "moment";
 import {getToken} from "./utils/storage";
-import { GET_LISTINGS_BY_SELLERS_URL} from "./settings/api";
+
 const now = moment(new Date())
 console.log("now:", now)
 const accessToken = getToken();
@@ -11,7 +11,7 @@ console.log(generalError);
 
 
 (async function getSellersPosts(){
-    const response =   await fetch (GET_LISTINGS_BY_SELLERS_URL,{
+    const response =   await fetch (`https://api.noroff.dev/api/v1/auction/profiles/nsebo/listings`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -23,11 +23,10 @@ console.log(generalError);
         const posts = await response.json();
         console.log("posts:", posts)
 
-
         const listOfHtmlPosts = [posts].map( myPost => {
             console.log("posts:", myPost);
             const postTitle = myPost.title;
-            console.log("myPost.title: ", postTitle)
+            console.log("myPost title: ", postTitle)
             const postDescription = myPost.description;
             const postMedia = myPost.media;
             const postEndsAt = myPost.endsAt;
@@ -37,8 +36,8 @@ console.log(generalError);
             return (`
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                   <a href="single-listing.html?listing_id=${myPost.id}">
-                        <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}" alt="">
+                   <a href="my-posts.html?listing_id=${myPost.id}">
+                        <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
                          </a>
                     </div>
                     <div class="mt-4 flex justify-between">
@@ -52,6 +51,7 @@ console.log(generalError);
                         </div>
                     </div>
                 </li>
+       
            `)
         }
 
