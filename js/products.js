@@ -12,7 +12,7 @@ console.log(generalError);
 const accessToken = getToken();
 
 
-(async function getAllPosts(){
+async function getAllPosts(searchParams){
   const response =   await fetch (GET_ALL_POSTS_URL,{
         method: "GET",
         headers: {
@@ -22,12 +22,17 @@ const accessToken = getToken();
     })
     console.log("response: ", response);
     if(response.ok){
-        const posts = await response.json();
-        console.log("posts:", posts)
+        let posts = await response.json();
+        let searchPosts = []
+        if(searchParams){
+            console.log( "searchParam:", searchParams)
+            searchPosts = posts.filter(x => x.description?.toLowerCase().includes(searchParams.toLowerCase()) || x.title?.toLowerCase().includes(searchParams.toLowerCase()))
+            posts.length = 0;
+            posts = searchPosts;
+            console.log("my posts:", posts)
+        }
 
-
-       const listOfHtmlPosts = posts.map((post)=>{
-       console.log("posts:", post);
+       const listOfHtmlPosts =  posts.map(post=>{
            const postTitle = post.title;
            const postDescription = post.description;
            const postMedia = post.media[0];
@@ -37,7 +42,7 @@ const accessToken = getToken();
 
            return (`
             <li  class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-76 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                    <a href="single-listing.html?listing_id=${post.id}">
                         <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}" alt="">
                          </a>
@@ -65,10 +70,25 @@ const accessToken = getToken();
         throw new Error(err)
     }
 
-})().catch(err =>{
+}getAllPosts().catch(err =>{
     console.log(err)
     console.log("get all post")
 });
 
 
 
+// search btn
+// #searchBtn.onclick(function (){
+// var searchParam = document.getElementById("search").value;
+// console.log(searchParam);
+// })
+
+document.getElementById("searchBtn").addEventListener("click", function (){
+    var searchParam = document.getElementById("search").value;
+    console.log("searchParam:", searchParam)
+    if(searchParam){
+        getAllPosts(searchParam);
+    }
+
+    console.log("searchParam:", searchParam);
+})

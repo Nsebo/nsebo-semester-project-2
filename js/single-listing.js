@@ -16,16 +16,6 @@ const listBids = document.querySelector("#list-bids");
 const listMedia = document.querySelector("#list-media");
 const listEndsAt = document.querySelector("#list-endsAt");
 const listTags = document.querySelector("#list-tags");
-console.log(listTitle)
-console.log(listId)
-console.log(listDesc)
-console.log(listBids)
-console.log(listMedia)
-console.log(listEndsAt)
-console.log(listTags)
-
-
-
 
 
 async function getListById() {
@@ -41,32 +31,32 @@ async function getListById() {
     }
     console.log(response);
     const data = await response.json();
-    const listTitle = data.title;
-    const listId = data.id;
-    const listDesc = data.description;
-    const listBids = data._count.bids;
-    const listMedia = data.media[0];
-    const listEndsAt = data.endsAt;
-    const listTags = data.tags;
+    const title = data.title;
+    const id = data.id;
+    const desc = data.description;
+    const bids = data._count.bids;
+    const media = data.media[0];
+    const endsAt = data.endsAt;
+    const tags = data.tags;
 
 
     listingDetails.innerHTML = `
   
 <li class="group relative">
                     <a href="/single-listing.html?listings_id=${data.id}">
-                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${listMedia}" alt="">
+                        <img  class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-96 md:rounded md:rounded-l-lg" src="${media}" alt="">
                          </a>
                     <div class="mt-4 flex justify-between">
                         <div>
                             <h3 class="text-sm font-medium text-black">
-                                <a href="#">${listTitle}</a>
+                                <a href="#">${title}</a>
                             </h3>
-                             <p class="text-sm  text-gray-500">Title:${listDesc}</p>
-                             <p class="text-sm  text-gray-500">Tags:${listTags}</p>
-                            <p class="text-sm  text-gray-500"> ${listEndsAt}</p>
-                            <p class="text-sm  text-gray-500">${listBids} </p>
+                             <p class="text-sm  text-gray-500">Title:${desc}</p>
+                             <p class="text-sm  text-gray-500">Tags:${tags}</p>
+                            <p class="text-sm  text-gray-500"> ${endsAt}</p>
+                            <p class="text-sm  text-gray-500">${bids} </p>
+                             <a href="/create-bid.html" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Place Bid</a>
                         </div>
-                        <a href="/create-bid.html"><button type="button" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Place Bid</button></a>
                     </div>
                 </li>
     `;

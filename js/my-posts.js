@@ -23,7 +23,7 @@ console.log(generalError);
         const posts = await response.json();
         console.log("posts:", posts)
 
-        const listOfHtmlPosts = [posts].map( myPost => {
+        const listOfHtmlPosts = posts.map( myPost => {
             console.log("posts:", myPost);
             const postTitle = myPost.title;
             console.log("myPost title: ", postTitle)
@@ -36,7 +36,7 @@ console.log(generalError);
             return (`
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                   <a href="my-posts.html?listing_id=${myPost.id}">
+                   <a href="single-listing.html?listing_id=${myPost.id}">
                         <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
                          </a>
                     </div>
@@ -67,5 +67,5 @@ console.log(generalError);
 
 })().catch(err =>{
     console.log(err)
-    console.log("get all post")
+    console.log("get my post")
 });

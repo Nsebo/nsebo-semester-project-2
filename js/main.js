@@ -30,7 +30,6 @@ document.getElementById("toggleId").onclick = function() {toggleMenu()};
 
 // open/close the menu when the user clicks on the button
 function toggleMenu() {
-
    console.log("toggleMenu called");
    if (menuTwo.classList.contains('hidden')) {
       menuTwo.classList.remove('hidden');
@@ -46,3 +45,4 @@ window.onclick = function (event) {
       menuTwo.classList.add('hidden');
    }
 }
+
