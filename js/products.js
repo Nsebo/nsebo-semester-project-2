@@ -1,9 +1,5 @@
-import moment from "moment";
 import {GET_ALL_POSTS_URL} from "./settings/api";
 import {getToken} from "./utils/storage";
-
-const now = moment(new Date())
-console.log("now:", now)
 
 const postsContainer = document.querySelector('#posts-container');
 console.log("postsContainer :", postsContainer)
@@ -27,7 +23,7 @@ async function getAllPosts(searchParams){
         if(searchParams){
             console.log( "searchParam:", searchParams)
             searchPosts = posts.filter(x => x.description?.toLowerCase().includes(searchParams.toLowerCase()) || x.title?.toLowerCase().includes(searchParams.toLowerCase()))
-            posts.length = 0;
+            posts  = [];
             posts = searchPosts;
             console.log("my posts:", posts)
         }
@@ -38,7 +34,6 @@ async function getAllPosts(searchParams){
            const postMedia = post.media[0];
            const postEndsAt = post.endsAt;
            const postTags = post.tags;
-           const createdDate = post.created;
 
            return (`
             <li  class="group relative">
@@ -70,7 +65,10 @@ async function getAllPosts(searchParams){
         throw new Error(err)
     }
 
-}getAllPosts().catch(err =>{
+}
+var searchParam = document.getElementById("search").value;
+getAllPosts(searchParam).catch(err =>{
+    console.log('here',postData);
     console.log(err)
     console.log("get all post")
 });
