@@ -120,50 +120,54 @@
         </div>
     </navbar>
 </header>
-<div class="py-6">
+<div class="py-6 ">
     <div class="flex flex-col gap-4 sm:flex-row justify-center">
-        <h2 class=" text-black text-3xl font-bold">Latest Bids</h2>
-        <div class="flex items-center">
-            <div class="inline-block relative w-64">
-                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option>Years</option>
-                    <option value="1990">2000</option>
-                    <option value="1991">2001</option>
-                    <option value="1992">2002</option>
-
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        <div class="py-6">
+            <div class="flex flex-col gap-4 sm:flex-row">
+                <h2 class=" text-white text-3xl font-small text-left ">Latest Bids</h2>
+                <div class="flex items-center">
+                    <label for="sort-posts" class="mb-0 text-sm font-medium text-white w-24">Sort By:</label>
+                    <select
+                            id="sort-posts"
+                            class="w-full bg-cyan-800 border border-cyan-300 text-white text-sm rounded-lg focus:ring-black focus:border-black block p-1.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-cyan-200"
+                    >
+                        <option value="created" selected>Created</option>
+                        <option value="title">Title</option>
+                        <option value="title">Desc</option>
+                    </select>
                 </div>
-            </div>
-            <div class="inline-block relative w-64">
-                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option>Type</option>
-                    <option>All</option>
-                    <option>Tesla</option>
-                    <option>Audi</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-            </div>
-            <div class="inline-block relative w-64">
-                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option>Transmission</option>
-                    <option>All</option>
-                    <option>Automatic</option>
-                    <option>Manual</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <div class="flex gap-4 sm:items-center items-end">
+                  <span class="flex gap-1 items-center">
+                    <label for="sort-descending" class="text-sm font-medium text-white">Descending</label>
+                    <input
+                            checked
+                            id="sort-descending"
+                            type="radio"
+                            value=""
+                            name="default-radio"
+                            class="radio-sort w-4 h-4 text-orange-600 bg-orange-100 border-orange-300 focus:ring-orange-500 dark:focus:ring-blue-600 focus:ring-2"
+                    />
+                  </span>
+                    <span class="flex gap-1 items-center">
+                    <label for="sort-ascending" class="text-sm font-medium text-white">Ascending</label>
+                    <input
+                            id="sort-ascending"
+                            type="radio"
+                            value=""
+                            name="default-radio"
+                            class="radio-sort w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                  </span>
                 </div>
             </div>
         </div>
-
+    </div>
 
     </div>
 </div>
 </div>
+
+
 <main>
     <div class="container my-12 px-6 mx-auto">
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -318,3 +322,4 @@
 </footer>
 </body>
 </html>
+

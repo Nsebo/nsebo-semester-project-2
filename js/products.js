@@ -9,7 +9,7 @@ const accessToken = getToken();
 
 
 async function getAllPosts(searchParams){
-  const response =   await fetch (GET_ALL_POSTS_URL,{
+    const response =   await fetch (GET_ALL_POSTS_URL,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -19,74 +19,94 @@ async function getAllPosts(searchParams){
     console.log("response: ", response);
     if(response.ok){
         let posts = await response.json();
-        let searchPosts = []
+        let searchPosts = [];
+        let listOfHtmlPosts;
         if(searchParams){
             console.log( "searchParam:", searchParams)
             searchPosts = posts.filter(x => x.description?.toLowerCase().includes(searchParams.toLowerCase()) || x.title?.toLowerCase().includes(searchParams.toLowerCase()))
             posts  = [];
             posts = searchPosts;
             console.log("my posts:", posts)
+            const data=displayPosts(searchPosts)
+            postsContainer.insertAdjacentHTML('beforeend', data);
+            console.log("listOfHtmlPosts: ", data)
+            return;
+        }
+        else{
+
+            const data = displayPosts(posts);
+            debugger;
+            postsContainer.insertAdjacentHTML('beforeend', data);
+            console.log("listOfHtmlPosts: ", posts)
         }
 
-       const listOfHtmlPosts =  posts.map(post=>{
-           const postTitle = post.title;
-           const postDescription = post.description;
-           const postMedia = post.media[0];
-           const postEndsAt = post.endsAt;
-           const postTags = post.tags;
-
-           return (`
-            <li  class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-76 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                   <a href="single-listing.html?listing_id=${post.id}">
-                        <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}" alt="">
-                         </a>
-                   
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm font-medium text-black">
-                                <a href="#">${postTitle}</a>
-                            </h3>
-                            <p class="text-sm  text-gray-500">${postDescription}</p>
-                            <p class="text-sm  text-gray-500"> ${postTags}</p>
-                            <p class="text-sm text-gray-400"><ion-icon name="calendar-outline"></ion-icon> ${postEndsAt}</p>
-                        </div>
-                    </div>
-                </li>
-           `)
-       })
-           .join('');
-        postsContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
-        console.log("listOfHtmlPosts: ", listOfHtmlPosts)
-
+        return;
     }else{
         const err = await response.json();
         throw new Error(err)
     }
 
 }
-var searchParam = document.getElementById("search").value;
-getAllPosts(searchParam).catch(err =>{
-    console.log('here',postData);
-    console.log(err)
-    console.log("get all post")
-});
+
+function displayPosts(arr) {
+    if (arr && arr.length > 0) {
+        return arr.map(post => {
+            debugger;
+            const postTitle = post.title;
+            const postDescription = post.description;
+            const postMedia = post.media[0];
+            const postEndsAt = post.endsAt;
+            const postTags = post.tags;
+
+            return (`
+                <li  class="group relative">
+                        <div class="min-h-80 aspect-w-1 aspect-h-1 w-76 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                       <a href="single-listing.html?listing_id=${post.id}">
+                            <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}" alt="">
+                             </a>
+                       
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm font-medium text-black">
+                                    <a href="#">${postTitle}</a>
+                                </h3>
+                                <p class="text-sm  text-gray-500">${postDescription}</p>
+                                <p class="text-sm  text-gray-500"> ${postTags}</p>
+                                <p class="text-sm text-gray-400"><ion-icon name="calendar-outline"></ion-icon> ${postEndsAt}</p>
+                            </div>
+                        </div>
+                    </li>
+               `)
+        })
+            .join('');
+    }
+    return null;
 
 
+}
 
-// search btn
-// #searchBtn.onclick(function (){
-// var searchParam = document.getElementById("search").value;
-// console.log(searchParam);
-// })
+window.onload = function (event) {
+    var searchParam = document.getElementById("search").value;
+    getAllPosts(searchParam).catch(err =>{
+
+        console.log(err)
+        console.log("get all post")
+    });
+}
 
 document.getElementById("searchBtn").addEventListener("click", function (){
     var searchParam = document.getElementById("search").value;
+    displayPosts([]);
     console.log("searchParam:", searchParam)
     if(searchParam){
+        document.getElementById('posts-container').innerHTML = '';
+
         getAllPosts(searchParam);
     }
+    else {
+        getAllPosts();
+    }
 
-    console.log("searchParam:", searchParam);
+
 })

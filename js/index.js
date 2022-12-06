@@ -75,9 +75,15 @@ let slideIndex = 1;
 showSlide(slideIndex);
 
 // change slide with the prev/next button
-function moveSlide(moveStep) {
-    showSlide(slideIndex += moveStep);
-}
+
+document.getElementById('moveSlidePlus').addEventListener('click', function () {
+    showSlide(slideIndex += 1);
+})
+document.getElementById('moveSlideMinus').addEventListener('click', function () {
+    showSlide(slideIndex += -1);
+})
+
+
 
 // change slide with the dots
 function currentSlide(n) {

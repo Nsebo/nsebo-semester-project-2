@@ -37,7 +37,7 @@ console.log(generalError);
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                    <a href="single-listing.html?listing_id=${myPost.id}">
-                        <img   class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
+                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
                          </a>
                     </div>
                     <div class="mt-4 flex justify-between">

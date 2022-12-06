@@ -44,7 +44,7 @@ async function getListById() {
   
 <li class="group relative">
                     <a href="/single-listing.html?listings_id=${data.id}">
-                        <img  class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-96 md:rounded md:rounded-l-lg" src="${media}" alt="">
+                        <img  class=" w-full rounded-t-lg h-96 md:h-auto md:w-96 md:rounded md:rounded-l-lg" src="${media}" alt="">
                          </a>
                     <div class="mt-4 flex justify-between">
                         <div>
