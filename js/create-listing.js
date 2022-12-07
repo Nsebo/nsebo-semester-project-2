@@ -55,9 +55,9 @@ createListingForm.addEventListener("submit", function (event) {
     console.log("list creation response:", response)
     if(response.ok){
         const data = await response.json();
-        location.href = "../my-posts.html";
         console.log(data);
         console.log("CREATE LIST SUCCEEDED!!  🥳 🤗🤗");
+        location.href = "/my-posts.html"
     }else{
         const error = await response.json();
         console.log(error);

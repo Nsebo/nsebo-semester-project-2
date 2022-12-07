@@ -1,107 +1,60 @@
-class Profile {
+import {getToken} from "./utils/storage";
+import {GET_PROFILE_INFO_URL} from "./settings/api";
 
-    setProfile(n, a, e, t) {
+const profileDetails = document.querySelector('#profile-details');
+console.log(profileDetails);
+const accessToken = getToken();
 
 
-        this.name = n;
-        this.age = a;
-        this.email = e;
-        this.telephoneNumber = t;
+async function getProfile() {
+    const response = await fetch(GET_PROFILE_INFO_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+        },
+    });
+    console.log('Get profile response: ', response);
+    const profileInfo = await response.json();
+    const UserName = profileInfo.name;
+    const email = profileInfo.email;
+    const avatar = profileInfo.avatar;
+    const credits = profileInfo.credits;
 
-        this.saveProfile();
-    }
+    console.log(profileInfo)
+    console.log(UserName)
+    console.log(email)
+    console.log(avatar)
+    console.log(credits)
 
-    getProfile() {
-        document.getElementById("FN").value = name;
-        document.getElementById("age").value = age;
-        document.getElementById("e").value = email;
-        document.getElementById("num").value = telephoneNumber;
-    }
+profileDetails.innerHTML = `
+  <div class="flex justify-between">
+                    <span class="text-xl font-semibold block">Admin Profile</span>
+                    <a href="edit-profile.html" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
+                </div>
+ <img id="showImage" class="max-w-xs w-14 " src="img/avatar-ali.png" alt="">
+                    <span class="text-gray-600 pb-4 block opacity-70">Personal information of your account</span>
+                    <div class="pb-6">
+                        <label for="username" class="font-semibold text-gray-700 block pb-1">Name</label>
+                        <div class="flex">
+                            <input disabled id="username" class="border-1  rounded-r px-4 py-2 w-full" type="text" value="${UserName}" />
+                           
+                        </div>
+                    </div>
+                    <div class="pb-4">
+                        <label for="email" class="font-semibold text-gray-700 block pb-1">Email</label>
+                        <input disabled id="email" class="border-1  rounded-r px-4 py-2 w-full" type="email" value="${email}" />
+                    </div>
+                    <div class="pb-4">
+                        <p class="text-black pt-4 block font-bold Right-15">Credits: ${credits}</p>
+                    </div>
+ 
+ 
+`
 
-    saveProfile() {
-        let storeName = document.getElementById('FN').value;
-        localStorage.setItem('name', storeName);
-        let storeAge = document.getElementById('age').value;
-        alert(storeAge);
-        localStorage.setItem('age', storeAge);
-        let storeEmail = document.getElementById('e').value;
-        localStorage.setItem('email', storeEmail);
-        let storeNum = document.getElementById('num').value;
-        localStorage.setItem('number', storeNum);
-    }
 
-}
-
-function validateForm() {
-
-    var x = document.forms['Login']['fName'].value;
-    if(x==null || x=="")
-    {
-        alert("Please enter your name");
-        document.getElementById('FN').focus();
-        //return false;
-    } else if (x.length < 3) {
-        alert("Password must be over 3 characters");
-        document.getElementById("FN").focus();
-        //return false
-    }
-
-    a = document.forms['Login']['ageField'].value;
-    if(a==null || a=="")
-    {
-        alert("age can not be empty");
-        document.getElementById('age').focus();
-        //return false;
-    }
-    else if(parseInt(a)<12 || parseInt(a) > 95)
-    {
-        alert("age should be between 12 and 95");
-        document.getElementById('age').focus();
-        //return false;
     }
 
 
-
-    var em = document.forms['Login']['email'].value;
-    alert(em);
-    var atpos=em.indexOf("@");
-    // Create a variable to return the numerical value of .
-    // within the variable
-    var dotpos=em.lastIndexOf(".");
-    // Compare the numerical values
-    if (atpos<1 || dotpos<atpos+4 || dotpos+2>=em.length)
-    {
-        alert("Not a valid e-mail address");
-        //return false;
-    } else if (em==null || em=="")
-    {
-        alert("Please enter your email adress");
-        document.getElementById('e').focus();
-        //return false;
-    }
-
-    var numb = document.forms['Login']['number'].value;
-    if (numb==null || numb=="") {
-        alert("Please enter your phone number");
-        document.getElementById('num').focus();
-        //return false;
-    } else if (numb.length > 7) {
-        alert("Phone number can't be more than 7 digits");
-        document.getElementById('num').focus();
-        //return false;
-    }
-
-}
-
-function UpdateProfile() {
-    myProfile = new Profile;
-    myProfile.validateForm();
-    if (myProfile.validateForm()) {
-        myProfile.setProfile();
-    }
-}
-
-function displayProfile() {
-    getProfile();
-}
+getProfile()
 

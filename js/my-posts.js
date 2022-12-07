@@ -31,7 +31,6 @@ console.log(generalError);
             const postMedia = myPost.media;
             const postEndsAt = myPost.endsAt;
             const postTags = myPost.tags;
-            const createdDate = myPost.created;
 
             return (`
             <li  class="group relative">

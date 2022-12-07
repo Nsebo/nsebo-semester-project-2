@@ -35,7 +35,6 @@ async function getAllPosts(searchParams){
         else{
 
             const data = displayPosts(posts);
-            debugger;
             postsContainer.insertAdjacentHTML('beforeend', data);
             console.log("listOfHtmlPosts: ", posts)
         }
@@ -51,7 +50,6 @@ async function getAllPosts(searchParams){
 function displayPosts(arr) {
     if (arr && arr.length > 0) {
         return arr.map(post => {
-            debugger;
             const postTitle = post.title;
             const postDescription = post.description;
             const postMedia = post.media[0];

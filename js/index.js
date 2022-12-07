@@ -106,14 +106,14 @@ function showSlide(n) {
     // remove active status from all dots
     for (i = 0; i < dots.length; i++) {
         dots[i].classList.remove('bg-cyan-500');
-        dots[i].classList.add('bg-white');
+        dots[i].classList.add('bg-slate-500');
     }
 
     // show the active slide
     slides[slideIndex - 1].classList.remove('hidden');
 
     // highlight the active dot
-    dots[slideIndex - 1].classList.remove('bg-white');
+    dots[slideIndex - 1].classList.remove('bg-slate-500');
     dots[slideIndex - 1].classList.add('bg-cyan-500');
 }
 

@@ -11,9 +11,8 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script type="module" src="/js/main.js" defer></script>
     <script type="module" src="/js/profile.js" defer></script>
-
 </head>
-<body >
+<body>
 <header class="bg-white ">
     <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100" id="nav-bar">
         <nav class="flex justify-between items-center py-8 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24">
@@ -79,12 +78,9 @@
 
                         </button>
                         <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-15 left-4 p-2">
-                            <a href="#" class="block dropdown-item px-1 py- mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline">
-                                Signed in as  <span class="font-medium">Nsebo</span>
-                            </a>
                             <a class="block dropdown-item px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
                                href="#">My Profile</a>
-                            <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-cyan-500"
+                            <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500  hover:text-white focus:bg-gray-200 focus:outline-none focus:shadow-outline text-cyan-500"
                                href="edit-profile.html">Edit Profile</a>
                             <div class="border-b"></div>
                             <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -121,9 +117,25 @@
     </navbar>
 </header>
 
+<main class=" lg:mt-20">
 
+    <div class="h-full flex justify-center  ">
+            <div id="profile-details" class=" w-96 p-4 sm:p-6 lg:p-8  shadow-md">
+                <div class="flex justify-between">
+                    <span class="text-xl font-semibold block">Admin Profile</span>
+                    <a href="edit-profile.html" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
+                </div>
 
+                <div class="rounded p-6" id="profile-info">
 
+                    <span class="text-gray-600 pb-4 block opacity-70">Personal information of your account</span>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
 
 
 <footer class="bg-white " aria-labelledby="footer-heading">
