@@ -10,6 +10,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="/js/main.js" defer></script>
   <script type="module" src="/js/single-listing.js" defer></script>
+
 </head>
 <body class=" bg-cyan-900 ">
 <header class="bg-slate-200 ">
@@ -71,14 +72,14 @@
                     class="flex flex-row items-center space-x-2 w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-cyan-500 focus:outline-none focus:shadow-outline">
               <div class="flex gap-4 items-center">
                 <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
-                <span class="font-bold">500 NOK</span>
+                <span class="font-bold">1000 NOK</span>
               </div>
 
             </button>
             <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-15 left-4 p-2">
 
               <a class="block dropdown-item px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
-                 href="#">My Profile</a>
+                 href="profile.html">My Profile</a>
               <a class=" dropdown-item block px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                  href="edit-profile.html">Edit Profile</a>
               <div class="border-b"></div>
@@ -172,6 +173,42 @@
 
       </li>
     </ul>
+
+  <div class="search-form hidden flex items-center space-x-4 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24 transform duration-500 transition-all">
+    <div class="flex bg-gray-200 p-2 w-full space-x-2 rounded-lg items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 opacity-75 ml-4" fill="none" viewBox="0 0 24 24"
+           stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+              class="w-full bg-gray-50 outline-none border-transparent focus:border-transparent focus:ring-0 rounded-lg text-sm sm:text-base"
+              type="text" placeholder="search cars..." />
+    </div>
+  </div>
+  <h2 class="text-2xl text-black underline">Bid here</h2>
+  <form
+          id="bidding-form"
+          class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-80 text-left bg-cyan-500 rounded-md border shadow">
+    <h2 class="mb-4 text-2xl font-semibold text-gray-700 underline">BID ON THIS LISTING </h2>
+
+    <div class="flex flex-col gap-y-1">
+      <label for="listing-bid-input" class="text-gray-600">Listing Bid Amount </label>
+      <input
+              id="listing-bid-input"
+              class="p-2 rounded-md"
+              name="listingBidInput"
+              type="number"
+              placeholder="Enter a bid amount">
+    </div>
+
+    <button class="justify-center capitalize inline-flex items-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+            type="submit">
+      BID
+    </button>
+  </form>
+
+
 
   <div id="general-error" class="text-2xl py-3.5 text-red-500 text-center hidden"></div>
 

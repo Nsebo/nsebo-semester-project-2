@@ -55,7 +55,6 @@ async function getListById() {
                              <p class="text-sm  text-gray-500">Tags:${tags}</p>
                             <p class="text-sm  text-gray-500"> ${endsAt}</p>
                             <p class="text-sm  text-gray-500">${bids} </p>
-                             <a href="/create-bid.html" class="inline-flex items-center rounded border border-transparent bg-cyan-500 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Place Bid</a>
                         </div>
                     </div>
                 </li>
@@ -64,6 +63,46 @@ async function getListById() {
 }
 
 getListById();
+
+
+const biddingForm = document.querySelector('#bidding-form');
+const listingBidInput = document.querySelector('#listing-bid-input');
+
+
+biddingForm.addEventListener("submit",function (event){
+    event.preventDefault()
+    console.log('listingBidInput', listingBidInput.value);
+
+    const amountToBid = {
+        amount: parseInt(listingBidInput.value),
+    };
+
+
+    async function bidOnList() {
+        const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}/bids`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify(amountToBid),
+        });
+        console.log('bid on list response: ', response);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            console.log('Bid on a list SUCCEEDED!!  🥳 🤗🤗');
+        } else {
+            const err = await response.json();
+            console.log(err);
+            console.log('CREATE LIST FAILED');
+        }
+        biddingForm.reset();
+    }
+
+    bidOnList();
+})
+
 
 
 
