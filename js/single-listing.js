@@ -57,7 +57,9 @@ async function getListById() {
                                 <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
                         </div>
                     </div>
+  
                 </li>
+                
     `;
 
 }
@@ -65,8 +67,17 @@ async function getListById() {
 getListById();
 
 
+
+const bidBtn = document.querySelector("#bid-btn");
+const myBid = document.querySelector("#my-modal");
 const biddingForm = document.querySelector('#bidding-form');
 const listingBidInput = document.querySelector('#listing-bid-input');
+
+bidBtn.addEventListener('click', () => {
+    biddingForm.style.display = 'block'
+   
+})
+
 
 
 biddingForm.addEventListener("submit",function (event){
@@ -76,6 +87,7 @@ biddingForm.addEventListener("submit",function (event){
     const amountToBid = {
         amount: parseInt(listingBidInput.value),
     };
+
 
 
     async function bidOnList() {
