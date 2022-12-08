@@ -33,7 +33,7 @@ const accessToken = getToken();
             const postMedia = items.media[0];
             const postEndsAt = items.endsAt;
             const postTags = items.tags;
-            const createdDate = items.created;
+            const bids = items._count.bids;
 
             return (`
             <li  class="group relative">
@@ -50,7 +50,8 @@ const accessToken = getToken();
                             </h3>
                             <p class="text-sm  text-gray-500">${postDescription}</p>
                             <p class="text-sm  text-gray-500"> ${postTags}</p>
-                            <p class="text-sm text-gray-400"><ion-icon name="calendar-outline"></ion-icon> ${postEndsAt}</p>
+                            <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon>  ${postEndsAt}</p>
+                             <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids}</p>
                         </div>
                     </div>
                 </li>

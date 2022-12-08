@@ -48,13 +48,13 @@ async function getListById() {
                          </a>
                     <div class="mt-4 flex justify-between">
                         <div>
-                            <h3 class="text-sm font-medium text-black">
+                            <h3 class="text-sm font-medium text-white">
                                 <a href="#">${title}</a>
                             </h3>
                              <p class="text-sm  text-gray-500">Title:${desc}</p>
-                             <p class="text-sm  text-gray-500">Tags:${tags}</p>
-                            <p class="text-sm  text-gray-500"> ${endsAt}</p>
-                            <p class="text-sm  text-gray-500">${bids} </p>
+                             <p class="text-sm  text-white"><ion-icon name="pricetags-sharp"></ion-icon> Tags:${tags}</p>
+                             <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon> ${endsAt}</p>
+                                <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
                         </div>
                     </div>
                 </li>

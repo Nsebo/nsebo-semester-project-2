@@ -56,3 +56,7 @@ profileDetails.innerHTML = `
 
 getProfile()
 
+
+
+
+

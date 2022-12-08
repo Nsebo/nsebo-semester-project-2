@@ -62,6 +62,7 @@ function displayPosts(arr) {
             const postMedia = post.media[0];
             const postEndsAt = post.endsAt;
             const postTags = post.tags;
+            const bids = post._count.bids;
 
             return (`
                 <li  class="group relative">
@@ -73,12 +74,13 @@ function displayPosts(arr) {
                         </div>
                         <div class="mt-4 flex justify-between">
                             <div>
-                                <h3 class="text-sm font-medium text-black">
+                                <h3 class="text-sm font-medium text-white">
                                     <a href="#">${postTitle}</a>
                                 </h3>
                                 <p class="text-sm  text-gray-500">${postDescription}</p>
                                 <p class="text-sm  text-gray-500"> ${postTags}</p>
-                                <p class="text-sm text-gray-400"><ion-icon name="calendar-outline"></ion-icon> ${postEndsAt}</p>
+                                <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon> ${postEndsAt}</p>
+                                <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
                             </div>
                         </div>
                     </li>
