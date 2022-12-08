@@ -22,17 +22,17 @@ async function getProfile() {
     const credits = profileInfo.credits;
 
     console.log(profileInfo)
+    console.log(avatar)
     console.log(UserName)
     console.log(email)
-    console.log(avatar)
     console.log(credits)
 
 profileDetails.innerHTML = `
+<div>
   <div class="flex justify-between">
                     <span class="text-xl font-semibold block">Admin Profile</span>
-                    <a href="edit-profile.html" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
                 </div>
- <img id="showImage" class="max-w-xs w-14 " src="img/avatar-ali.png" alt="">
+            <img id="showImage" class="max-w-xs w-14 " src="${avatar}" alt="">
                     <span class="text-gray-600 pb-4 block opacity-70">Personal information of your account</span>
                     <div class="pb-6">
                         <label for="username" class="font-semibold text-gray-700 block pb-1">Name</label>
@@ -48,11 +48,9 @@ profileDetails.innerHTML = `
                     <div class="pb-4">
                         <p class="text-black pt-4 block font-bold Right-15">Credits: ${credits}</p>
                     </div>
- 
- 
+                       <a href="edit-profile.html" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
+  </div>
 `
-
-
     }
 
 

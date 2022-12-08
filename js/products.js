@@ -47,6 +47,13 @@ async function getAllPosts(searchParams){
 
 }
 
+document.getElementById("sort-products").addEventListener("change", function(){
+    var sorting = document.getElementById("sort-products").value;
+    console.log(sorting)
+    console.log("getAllPosts:", getAllPosts)
+})
+
+
 function displayPosts(arr) {
     if (arr && arr.length > 0) {
         return arr.map(post => {

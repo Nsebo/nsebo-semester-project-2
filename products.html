@@ -58,8 +58,6 @@
                                 class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
                         </div>
                     </li>
-
-
                     <li class="text-lg md:text-base lg:text-lg font-medium group ">
                         <a href="create-listing.html">Sell
                         </a>
@@ -67,8 +65,6 @@
                                 class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
                         </div>
                     </li>
-
-
                     <li id="dropdown-wrapper"  class="text-lg md:text-base lg:text-lg font-medium group relative">
                         <button id="toggleId"
                                 class="flex flex-row items-center space-x-2 w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-500 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-cyan-500 focus:outline-none focus:shadow-outline">
@@ -76,7 +72,6 @@
                                 <img class="h-8 rounded-full" src="img/avatar-ali.png" alt=""/>
                                 <span class="font-bold">1000 NOK</span>
                             </div>
-
                         </button>
                         <div id="menuTwo" class="hidden flex flex-col bg-white drop-shadow-md absolute top-15 left-4 p-2">
                             <a class="block dropdown-item px-1 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-cyan-500 focus:bg-cyan-200 focus:outline-none focus:shadow-outline"
@@ -88,9 +83,7 @@
                                href="#">Logout</a>
                         </div>
                     </li>
-
                 </ul>
-
             </div>
             </div>
             </div>
@@ -125,22 +118,21 @@
                 <div class="py-6">
                     <div class="flex flex-col gap-4 sm:flex-row">
                         <div class="flex items-center">
-                            <label for="sort-posts" class="mb-0 text-medium font-medium text-white w-24">Sort By:</label>
+                            <label for="sort-products" class="mb-0 text-medium font-medium text-white w-28">Sort By:</label>
                             <select
-                                    id="sort-posts"
-                                    class="w-full bg-cyan-800 border border-cyan-300 text-white text-sm rounded-lg focus:ring-black focus:border-black block p-1.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-cyan-200"
-                            >
+                                    id="sort-products"
+                                    class="w-full bg-cyan-800 border border-cyan-500 text-white text-sm rounded-lg focus:ring-black focus:border-black block p-1 dark:placeholder-gray-600 dark:text-white dark:focus:ring-black dark:focus:border-black">
                                 <option value="created" selected>Created</option>
                                 <option value="title">Title</option>
-                                <option value="title">Desc</option>
+                                <option value="desc">Desc</option>
                             </select>
                         </div>
                         <div class="flex gap-4 sm:items-center items-end">
                   <span class="flex gap-1 items-center">
-                    <label for="descending" class="text-sm font-medium text-white">Descending</label>
+                    <label for="ascending" class="text-sm font-medium text-white">Ascending</label>
                     <input
                             checked
-                            id="descending"
+                            id="ascending"
                             type="radio"
                             value=""
                             name="default-radio"
@@ -148,9 +140,9 @@
                     />
                   </span>
                             <span class="flex gap-1 items-center">
-                    <label for="ascending" class="text-sm font-medium text-white">Ascending</label>
+                    <label for="descending " class="text-sm font-medium text-white"> Descending</label>
                     <input
-                            id="ascending"
+                            id="descending "
                             type="radio"
                             value=""
                             name="default-radio"
@@ -187,19 +179,19 @@
         </div>
         <div class="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div class="space-y-3">
-                <h3 class="tracking-wide uppercase dark:text-gray-50">Product</h3>
+                <h3 class="tracking-wide uppercase dark:text-gray-50">HOW IT WORKS</h3>
                 <ul class="space-y-1">
                     <li>
-                        <a rel="noopener noreferrer" href="#">Features</a>
+                        <a rel="noopener noreferrer" href="signup.html">Register</a>
                     </li>
                     <li>
-                        <a rel="noopener noreferrer" href="#">Integrations</a>
+                        <a rel="noopener noreferrer" href="login.html">Login</a>
                     </li>
                     <li>
-                        <a rel="noopener noreferrer" href="#">Pricing</a>
+                        <a rel="noopener noreferrer" href="create-listing.html">Buy</a>
                     </li>
                     <li>
-                        <a rel="noopener noreferrer" href="#">FAQ</a>
+                        <a rel="noopener noreferrer" href="create-listing.html">Sell</a>
                     </li>
                 </ul>
             </div>
@@ -207,10 +199,10 @@
                 <h3 class="tracking-wide uppercase dark:text-gray-50">Company</h3>
                 <ul class="space-y-1">
                     <li>
-                        <a rel="noopener noreferrer" href="#">Privacy</a>
+                        <a rel="noopener noreferrer" href="index.html">Auction</a>
                     </li>
                     <li>
-                        <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                        <a rel="noopener noreferrer" href="profile.html">Nsebo</a>
                     </li>
                 </ul>
             </div>
