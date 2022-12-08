@@ -75,9 +75,7 @@ const listingBidInput = document.querySelector('#listing-bid-input');
 
 bidBtn.addEventListener('click', () => {
     biddingForm.style.display = 'block'
-   
 })
-
 
 
 biddingForm.addEventListener("submit",function (event){
