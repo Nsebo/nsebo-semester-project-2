@@ -56,10 +56,8 @@ async function getListById() {
                              <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon> ${endsAt}</p>
                                 <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
                         </div>
-                    </div>
-  
-                </li>
-                
+                    </div>  
+                     </li>
     `;
 
 }

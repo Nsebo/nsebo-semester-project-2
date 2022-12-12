@@ -1,5 +1,5 @@
-import '../CSS/style.css';
-
+import '../css/style.css';
+import {clearStorage} from "./utils/storage";
 import header from "./compenents/header";
 
 header()
@@ -46,3 +46,12 @@ window.onclick = function (event) {
    }
 }
 
+
+const logOutBtn = document.querySelector('#logOut');
+if (logOutBtn) {
+   logOutBtn.addEventListener('click', function () {
+      console.log('I am clicked');
+      clearStorage();
+      window.location.replace('/login.html');
+   });
+}
