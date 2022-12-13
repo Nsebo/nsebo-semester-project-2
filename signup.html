@@ -99,8 +99,18 @@
             </span>
           </div>
           <div class="mb-3">
-            <button class="mb-1.5 block w-full text-center text-white bg-slate-900 hover:bg-cyan-500 px-2 py-1.5 rounded-md">Sign Up</button>
-            <p id="form-error-message" class="capitalize text-3xl text-orange-200"></p>
+            <label class="mb-2 block text-xs font-semibold">Avatar: (Optional)</label>
+            <input
+                    id="avatar"
+                    type="text"
+                    name="avatar"
+                    placeholder="Avatar URL"
+                    class="block w-full rounded-md border border-gray-600 focus:border-cyan-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500" />
+
+          </div>
+          <div class="mb-3">
+            <button id="signUp" class="mb-1.5 py-2 px-4 block w-full text-center text-white bg-cyan-900 hover:bg-cyan-500 px-2 py-1.5 rounded-md">Sign Up</button>
+            <p id="form-error-message" class="capitalize text-3xl text-cyan-200"></p>
           </div>
         </form>
       </div>

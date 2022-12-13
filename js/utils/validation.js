@@ -22,4 +22,21 @@ function validatePassword(password, confirmPassword) {
   }
 }
 
-export { validateEmail, validatePassword };
+function isValidUrl(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+function isImage(url) {
+  const imgRegex = /\.(jpg|jpeg|png|webp|avif|gif|svg)$/;
+  if (typeof url === 'object') {
+    return imgRegex.test(url.value);
+  } else {
+    return imgRegex.test(url);
+  }
+}
+export { validateEmail, validatePassword, isImage,isValidUrl };

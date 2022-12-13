@@ -12,7 +12,7 @@
     <script type="module" src="/js/main.js" defer></script>
     <script type="module" src="/js/profile.js" defer></script>
 </head>
-<body>
+<body class="bg-cyan-900">
 <header class="bg-slate-200  ">
     <navbar class="w-full min-h-screen text-gray-900 bg-gradient-to-br from-transparent to-yellow-100" id="nav-bar">
         <nav class="flex justify-between items-center py-8 px-6 mx-auto max-w-screen-xl md:px-12 lg:px-16 xl:px-24">
@@ -46,13 +46,13 @@
                         </div>
                     </li>
                     <li class="text-lg md:text-base lg:text-lg font-medium group">
-                        <a href="products.html">All Products
+                        <a href="products.html">All Posts
                         </a>
                         <div class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
                         </div>
                     </li>
                     <li class="text-lg md:text-base lg:text-lg font-medium group ">
-                        <a href="my-posts.html">My Products
+                        <a href="my-posts.html">My Posts
                         </a>
                         <div
                                 class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
@@ -61,7 +61,7 @@
 
 
                     <li class="text-lg md:text-base lg:text-lg font-medium group ">
-                        <a href="create-product.html">Sell
+                        <a href="create-product.html">Create Bid
                         </a>
                         <div
                                 class="h-0.5 bg-cyan-500 scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-300 ease-out">
@@ -113,14 +113,14 @@
 </header>
 
 <main class=" lg:mt-20">
-
-    <div class="h-full flex justify-center ">
+    <div   id="changeAvatar" class="h-full flex justify-center ">
         <div id="profile-details" class=" w-96 p-4 sm:p-6 lg:p-8  ">
             <div class="rounded p-6" id="profile-info">
             </div>
         </div>
+        <p id="avatarErrorMessage" class="text-red-600 hidden">Must be a valid URL</p>
+        <p id="generalErrorMessage" class="text-red-600"></p>
     </div>
-
 
 </main>
 <footer class="px-4 divide-y bg-slate-200 dark:text-gray-100">

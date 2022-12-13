@@ -17,16 +17,13 @@ const confirmPasswordError = document.querySelector("#confirmPasswordError");
 const confirmPasswordErrorNotMatching = document.querySelector(
     "#confirmPasswordErrorNotMatching"
 );
+const avatar = document.querySelector("#avatar");
 
+const avatarError = 'Avatar must contain image filename ending (.jpg .gif .png etc)';
+console.log(avatarError)
 const formErrorMessage = document.querySelector("#form-error-message");
 
-console.log(signupForm)
-console.log(email)
-console.log(password)
-console.log(confirmPassword)
-
 signupForm.addEventListener("submit", function (event) {
-    console.log("Per was here--i clicked")
     event.preventDefault()
 
     let isUserName = false;
@@ -75,13 +72,6 @@ signupForm.addEventListener("submit", function (event) {
     let isValidPasswordMatch = false;
     isValidPasswordMatch = validatePassword(password.value, confirmPassword.value);
 
-    console.log("isUserName:", isUserName)
-    console.log("isUserName:", isEmail)
-    console.log("isUserName:", isValidEmail)
-    console.log("isUserName:", isPassword)
-    console.log("isUserName:", isConfirmPassword)
-    console.log("isUserName:", isValidPasswordMatch)
-
 
     let isFormValid =
         isUserName &&
@@ -93,18 +83,14 @@ signupForm.addEventListener("submit", function (event) {
     if (isFormValid) {
         console.log("validate success");
 
-        // API CALL
-
-
-        console.log(userName.value)
-        console.log(email.value)
-        console.log(password.value)
-
         const userData = {
             name: userName.value,
             email: email.value,
             password: password.value,
+            avatar: avatar.value
         };
+        console.log("Per was here");
+        console.log(userData);
 
         (async function createUser() {
             const response = await fetch(`${CREATE_USER_URL}`, {
@@ -115,6 +101,7 @@ signupForm.addEventListener("submit", function (event) {
                 body: JSON.stringify(userData),
             });
             if (response.ok) {
+                console.log("user registration OK");
                 const data = await response.json();
                 location.href = "../login.html";
             } else {
@@ -125,7 +112,6 @@ signupForm.addEventListener("submit", function (event) {
             }
         })().catch((err) => {
             formErrorMessage.innerHTML = `${err.message}`;
-            console.log(userData);
             console.log(JSON.stringify(userData));
         });
     } else {

@@ -62,14 +62,13 @@ function clearStorage() {
   localStorage.clear();
 }
 
-function saveCredit(credit) {
-  saveToStorage(creditKey, credit);
+function saveCredit(credits) {
+  saveToStorage(creditKey, credits);
 }
-
 function getCreditAmount() {
   const availableCredit = getFromStorage(creditKey);
   if (availableCredit) {
-    return availableCredit
+    return availableCredit;
   } else {
     return null;
   }

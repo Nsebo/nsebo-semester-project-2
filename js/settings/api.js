@@ -9,8 +9,9 @@ const LOGIN_USER_URL = API_BASE_URL +  "/api/v1/auction/auth/login";
 const CREATE_LISTING_URL = API_BASE_URL +  "/api/v1/auction/listings";
 const GET_LISTINGS_BY_ID_URL = API_BASE_URL +  `/api/v1/auction/listings/bids`;
 const GET_ALL_POSTS_URL = API_BASE_URL +  "/api/v1/auction/listings";
-const GET_PROFILE_INFO_URL = API_BASE_URL +  `/api/v1/auction/profiles/${name}`;
-const CHANGE_AVATAR_URL = API_BASE_URL + `api/v1/auction/profiles/${name}/media`
+const GET_PROFILE_URL = API_BASE_URL +  `/api/v1/auction/profiles/${name}`;
+const CHANGE_AVATAR_URL = API_BASE_URL + `api/v1/auction/profiles/${name}/media`;
+
 
 export {
     API_BASE_URL,
@@ -19,6 +20,6 @@ export {
     CREATE_LISTING_URL,
     GET_LISTINGS_BY_ID_URL,
     GET_ALL_POSTS_URL,
-    GET_PROFILE_INFO_URL,
+    GET_PROFILE_URL,
     CHANGE_AVATAR_URL
 };
