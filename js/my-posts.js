@@ -22,18 +22,16 @@ console.log(generalError);
     if(response.ok){
         const posts = await response.json();
         console.log("posts:", posts)
-
+        if (!posts.length) {
+            generalError.innerHTML = 'Sorry, there are currently no listings';
+        } else {
         const listOfHtmlPosts = posts.map( myPost => {
             console.log("posts:", myPost);
             const postTitle = myPost.title;
-            console.log("myPost title: ", postTitle)
             const postDescription = myPost.description;
             const postMedia = myPost.media;
             const postEndsAt = myPost.endsAt;
             const postTags = myPost.tags;
-            const bids = myPost._count.bids;
-
-
             return (`
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
@@ -49,7 +47,6 @@ console.log(generalError);
                             <p class="text-sm  text-gray-500">${postDescription}</p>
                             <p class="text-sm  text-gray-500"> ${postTags}</p>
                              <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon> ${postEndsAt}</p>
-                                <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
                         </div>
                     </div>
                 </li>
@@ -60,7 +57,7 @@ console.log(generalError);
         )
             .join('');
         postsContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
-        console.log("listOfHtmlPosts: ", listOfHtmlPosts)
+    }
 
     }else{
         const err = await response.json();

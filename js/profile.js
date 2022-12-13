@@ -3,6 +3,7 @@ import {GET_PROFILE_INFO_URL} from "./settings/api";
 
 const profileDetails = document.querySelector('#profile-details');
 console.log(profileDetails);
+
 const accessToken = getToken();
 
 
@@ -27,10 +28,11 @@ async function getProfile() {
     console.log(email)
     console.log(credits)
 
-profileDetails.innerHTML = `
+    profileDetails.innerHTML = `
 <div>
   <div class="flex justify-between">
                     <span class="text-xl font-semibold block">Admin Profile</span>
+                    
                 </div>
             <img id="showImage" class="max-w-xs w-14 " src="${avatar}" alt="">
                     <span class="text-gray-600 pb-4 block opacity-70">Personal information of your account</span>
@@ -46,17 +48,15 @@ profileDetails.innerHTML = `
                         <input disabled id="email" class="border-1  rounded-r px-4 py-2 w-full" type="email" value="${email}" />
                     </div>
                     <div class="pb-4">
+                     <span class="text-sm text-gray-500 dark:text-orange-200">Auction seller</span>
                         <p class="text-black pt-4 block font-bold Right-15">Credits: ${credits}</p>
                     </div>
-                       <a href="edit-profile.html" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
+                         <a href="#" class="-mt-2 text-md font-bold text-white bg-cyan-500 rounded-full px-5 py-2 hover:bg-gray-800">Change</a>
   </div>
+  
+  
 `
-    }
+}
 
 
 getProfile()
-
-
-
-
-

@@ -17,19 +17,6 @@ const accessToken = getToken();
 
 createListingForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log("i clicked the form BTN");
-    console.log(listingTitle.value.trim())
-    console.log(listDescription.value.trim())
-
-    console.log(listTagOne.value.trim())
-    console.log(listTagTwo.value.trim())
-    console.log(listTagThree.value.trim())
-
-    console.log(listImgOne.value.trim())
-    console.log(listImgTwo.value.trim())
-    console.log(listImgThree.value.trim())
-
-    console.log(listingEndDate.value)
 
     const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value]
     const listingImages = [listImgOne.value, listImgTwo.value, listImgThree.value]
@@ -38,7 +25,7 @@ createListingForm.addEventListener("submit", function (event) {
         "title": "listingTitle.value.trim()",
         "description":"listDescription.value.trim()",
         "tags": listingTags,
-        "media": listingImages,
+        "media": listingImages.length > 0 ? listingImages : null,
         "endsAt": listingEndDate.value
     }
     console.log("listingData:", listingData)
