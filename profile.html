@@ -114,14 +114,24 @@
 
 <main class=" lg:mt-20">
     <div   id="changeAvatar" class="h-full flex justify-center ">
+        <div id="avatarInput"    />
         <div id="profile-details" class=" w-96 p-4 sm:p-6 lg:p-8  ">
             <div class="rounded p-6" id="profile-info">
             </div>
         </div>
+    </div>
         <p id="avatarErrorMessage" class="text-red-600 hidden">Must be a valid URL</p>
         <p id="generalErrorMessage" class="text-red-600"></p>
     </div>
+    <div class="container my-12 px-6 mx-auto">
+        <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 
+            <h2 class="text-3xl font-bold mb-12 text-center text-white">My Bids</h2>
+            <ul id="posts-container" class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+            </ul>
+        </div>
+    </div>
 </main>
 <footer class="px-4 divide-y bg-slate-200 dark:text-gray-100">
     <div class="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">

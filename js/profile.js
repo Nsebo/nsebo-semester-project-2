@@ -1,25 +1,52 @@
-import {getToken} from "./utils/storage";
+import {getToken, updateLocalStorage} from "./utils/storage";
+import {isValidUrl} from "./utils/validation";
 import {GET_PROFILE_URL, CHANGE_AVATAR_URL} from "./settings/api";
 
 const profileDetails = document.querySelector('#profile-details');
 console.log(profileDetails);
 const changeAvatar = document.querySelector('#changeAvatar');
 console.log(changeAvatar);
+const avatarInput = document.querySelector("#avatarInput")
 const generalErrorMessage = document.querySelector('#generalErrorMessage');
 const accessToken = getToken();
 
-async function updateAvatar() {
-
-    const response = await fetch(CHANGE_AVATAR_URL, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
-        },
-    });
-
-}
-updateAvatar()
+changeAvatar.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let isAvatarValid = false;
+    isAvatarValid = isValidUrl(avatarInput.value);
+    if (isAvatarValid) {
+        let avatarErrorMessage;
+        avatarErrorMessage.classList.add('hidden');
+        isAvatarValid = true;
+    } else {
+        let avatarErrorMessage;
+        avatarErrorMessage.classList.remove('hidden');
+    }
+    if (isAvatarValid) {
+        const avatarData = {
+            avatar: avatarInput.value,
+        };
+        (async function changeAvatar() {
+            const response = await fetch(CHANGE_AVATAR_URL, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`,
+                },
+                body: JSON.stringify(avatarData),
+            });
+            if (response.ok) {
+                updateLocalStorage(GET_PROFILE_URL);
+            } else {
+                const error = await response.json();
+                const errorMessage = error.errors[0].message;
+                throw new Error(errorMessage);
+            }
+        })().catch((errorMessage) => {
+            generalErrorMessage.innerHTML = `${errorMessage}`;
+        });
+    }
+});
 
 async function getProfile() {
     const response = await fetch(GET_PROFILE_URL, {
@@ -44,31 +71,18 @@ async function getProfile() {
 
     profileDetails.innerHTML = `
 <div>
-  <div class="flex justify-between">
-                    <span class="text-xl font-semibold block">Admin</span>
+            <img id="showImage" class="max-w-xs w-20 h-20 rounded-full object-cover " src="${avatar}" alt="">
+                       <div class="pb-6">
                     
-                </div>
-            <img id="showImage" class="max-w-xs w-14 " src="${avatar}" alt="">
-                    <span class="text-gray-600 pb-4 block opacity-70">Personal information of your account</span>
-                                        <div class="pb-6">
-                        <label for="avatar" class="font-semibold text-white block pb-1">Avatar</label>
-                        <div class="flex">
-                            <input disabled id="username" class=" text-white border-1  rounded-r px-4 py-2 w-full" type="text" value="${avatar}" />
-                        </div>
-                         <a href="#" id="avatarId" class="-mt-2 text-md font-bold text-white bg-black rounded-full px-5 py-2 hover:bg-gray-800">Update Avatar</a>
-
+                         <a  class="-mt-2 text-bold font-bold text-white underline rounded-full px-5 py-2 ">Update Avatar</a>
                     </div>
                     
                     <div class="pb-6">
-                        <label for="username" class="font-semibold text-white block pb-1">Name</label>
-                        <div class="flex">
-                            <input disabled id="username" class=" text-white border-1  rounded-r px-4 py-2 w-full" type="text" value="${UserName}" />
-                           
-                        </div>
+                        <div  class="font-semibold text-white block pb-1">${UserName}</div>
                     </div>
                     <div class="pb-4">
-                        <label for="email" class="font-semibold text-white block pb-1">Email</label>
-                        <input disabled id="email" class=" text-white border-1  rounded-r px-4 py-2 w-full" type="email" value="${email}" />
+                        <div  class="font-semibold text-white block pb-1">${email}</div>
+                       
                     </div>
                     <div class="pb-4">
                         <p class="text-white pt-4 block font-bold Right-15">Credits: ${credits}</p>
