@@ -84,8 +84,6 @@ biddingForm.addEventListener("submit",function (event){
         amount: parseInt(listingBidInput.value),
     };
 
-
-
     async function bidOnList() {
         const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}/bids`, {
             method: 'POST',
