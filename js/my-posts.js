@@ -32,9 +32,10 @@ console.log(generalError);
             const postMedia = myPost.media;
             const postEndsAt = myPost.endsAt;
             const postTags = myPost.tags;
+
             return (`
             <li  class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-76 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                    <a href="single-listing.html?listing_id=${myPost.id}">
                         <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
                          </a>

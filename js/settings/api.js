@@ -11,7 +11,7 @@ const GET_LISTINGS_BY_ID_URL = API_BASE_URL +  `/api/v1/auction/listings/bids`;
 const GET_ALL_POSTS_URL = API_BASE_URL +  "/api/v1/auction/listings";
 const GET_PROFILE_URL = API_BASE_URL +  `/api/v1/auction/profiles/${name}`;
 const CHANGE_AVATAR_URL = API_BASE_URL + `api/v1/auction/profiles/${name}/media`;
-const USER_BIDS_API_URL = API_BASE_URL + `api/v1/auction/profiles/${name}/bids?_listings=true`;
+const USER_BIDS_API_URL = API_BASE_URL + `/api/v1/auction/profiles/${name}/bids?_listings=true`;
 
 
 export {

@@ -3,6 +3,7 @@ import {isValidUrl} from "./utils/validation";
 import {GET_PROFILE_URL, CHANGE_AVATAR_URL, USER_BIDS_API_URL} from "./settings/api";
 
 const profileDetails = document.querySelector('#profile-details');
+const userBidsContainer = document.querySelector('#userBidsContainer');
 console.log(profileDetails);
 const changeAvatar = document.querySelector('#changeAvatar');
 console.log(changeAvatar);
@@ -104,27 +105,25 @@ async function getProfile() {
     });
     console.log('Get all posts response: ', response);
     if (response.ok) {
-        const listings = await response.json();
-        console.log(listings);
-        console.log('Get listings succeeded');
-        console.log('posts: ', listings);
-        if (!listings.length) {
+        const bids = await response.json();
+        console.log(bids);
+        console.log('Get bids succeeded');
+        console.log('bids: ', bids);
+        if (!bids.length) {
             generalErrorMessage.innerHTML = 'Sorry, there are currently no bids';
         } else {
-            const listOfHtmlPosts = listings
-                .map((post) => {
-                    console.log('listings ', post);
-                    const listingTitle = post.title;
-                    const listingDescription = post.description;
-                    const listingMedia = post.media[0];
-                    const listingEndsAt = post.endsAt;
-                    const listingTags = post.tags;
+            const listOfHtmlPosts = bids.map((bid) => {
+                    const listingTitle = bid.listing.title;
+                    const listingDescription = bid.listing.description;
+                    const listingMedia = bid.listing.media;
+                    const listingEndsAt = bid.listing.endsAt;
+                    const listingTags = bid.listing.tags;
 
                     return `
-          <li  class="group relative">
-                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                   <a href="single-listing.html?listing_id=${post.id}">
-                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${listingMedia }">
+         <li  class="group relative list-none ">
+                    <div class="min-h-80 aspect-w-1 aspect-h-1 w-80 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                   <a href="products.html?listing_id=${bid.id}">
+                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${listingMedia}">
                          </a>
                     </div>
                     <div class="mt-4 flex justify-between">
@@ -142,8 +141,7 @@ async function getProfile() {
         `;
                 })
                 .join('');
-            let listingContainer;
-            listingContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
+            userBidsContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
         }
     } else {
         const err = await response.json();
@@ -156,4 +154,4 @@ async function getProfile() {
     generalErrorMessage.innerHTML = err;
 });
 
-getProfile()
+getProfile();

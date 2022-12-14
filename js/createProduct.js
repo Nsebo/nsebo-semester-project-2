@@ -1,4 +1,4 @@
-import {CREATE_LISTING_URL, LOGIN_USER_URL} from "./settings/api";
+import {CREATE_LISTING_URL} from "./settings/api";
 import {getToken} from "./utils/storage";
 
 const createListingForm = document.querySelector("#create-listing-form");
@@ -14,7 +14,9 @@ const listImgThree = document.querySelector("#listImgThree");
 const listingEndDate = document.querySelector("#listingEndDate");
 const accessToken = getToken();
 
-
+if (!accessToken) {
+    location.href = '/my-posts.html';
+}
 createListingForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -22,8 +24,8 @@ createListingForm.addEventListener("submit", function (event) {
     const listingImages = [listImgOne.value, listImgTwo.value, listImgThree.value]
 
     const listingData = {
-        "title": "listingTitle.value.trim()",
-        "description":"listDescription.value.trim()",
+        "title": listingTitle.value.trim(),
+        "description":listDescription.value.trim(),
         "tags": listingTags,
         "media": listingImages.length > 0 ? listingImages : null,
         "endsAt": listingEndDate.value
