@@ -5,10 +5,13 @@ export default {
     rollupOptions: {
       input: {
         home: resolve(__dirname, 'index.html'),
-        signup: resolve(__dirname, 'signup.html'),
         login: resolve(__dirname, 'login.html'),
-        createListing: resolve(__dirname, 'create-product.html'),
-        listingDetails: resolve(__dirname, 'listing-details.html'),
+        createProduct: resolve(__dirname, 'create-product.html'),
+        myPosts: resolve(__dirname, 'my-posts.html'),
+        products: resolve(__dirname, 'products.html'),
+        profile: resolve(__dirname, 'profile.html'),
+        signup: resolve(__dirname, 'signup.html'),
+        singleListing: resolve(__dirname, 'single-listing.html'),
       },
     },
   },
