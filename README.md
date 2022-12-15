@@ -1,12 +1,4 @@
-# nsebo-semester-project-2
-<<<<<<< Updated upstream
-Auction site
+# Nsebo-Semester-project-2
 
-
-
-=======
-
-Semester Project 2
 
 Auction site
->>>>>>> Stashed changes
