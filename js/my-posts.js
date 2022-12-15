@@ -1,43 +1,43 @@
-import moment from "moment";
-import {getToken} from "./utils/storage";
+import moment from 'moment';
+import { getToken } from './utils/storage';
 
-const now = moment(new Date())
-console.log("now:", now)
+const now = moment(new Date());
+console.log('now:', now);
 const accessToken = getToken();
 const postsContainer = document.querySelector('#posts-container');
-console.log("postsContainer :", postsContainer)
+console.log('postsContainer :', postsContainer);
 const generalError = document.querySelector('#general-error');
 console.log(generalError);
 
+(async function getSellersPosts() {
+  const response = await fetch(`https://api.noroff.dev/api/v1/auction/profiles/nsebo/listings`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  console.log('response: ', response);
+  if (response.ok) {
+    const posts = await response.json();
+    console.log('posts:', posts);
+    if (!posts.length) {
+      generalError.innerHTML = 'Sorry, there are currently no listings';
+    } else {
+      const listOfHtmlPosts = posts
+        .map((myPost) => {
+          console.log('posts:', myPost);
+          const postTitle = myPost.title;
+          const postDescription = myPost.description;
+          const postMedia = myPost.media;
+          const postEndsAt = myPost.endsAt;
+          const postTags = myPost.tags;
 
-(async function getSellersPosts(){
-    const response =   await fetch (`https://api.noroff.dev/api/v1/auction/profiles/nsebo/listings`,{
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${accessToken}`
-        }
-    })
-    console.log("response: ", response);
-    if(response.ok){
-        const posts = await response.json();
-        console.log("posts:", posts)
-        if (!posts.length) {
-            generalError.innerHTML = 'Sorry, there are currently no listings';
-        } else {
-        const listOfHtmlPosts = posts.map( myPost => {
-            console.log("posts:", myPost);
-            const postTitle = myPost.title;
-            const postDescription = myPost.description;
-            const postMedia = myPost.media;
-            const postEndsAt = myPost.endsAt;
-            const postTags = myPost.tags;
-
-            return (`
+          return `
             <li  class="group relative">
                     <div class="min-h-80 aspect-w-1 aspect-h-1 w-76 overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                    <a href="single-listing.html?listing_id=${myPost.id}">
-                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia }">
+                        <img  class="h-full w-full object-cover object-center lg:h-full lg:w-full" src="${postMedia}">
                          </a>
                     </div>
                     <div class="mt-4 flex justify-between">
@@ -52,20 +52,16 @@ console.log(generalError);
                     </div>
                 </li>
        
-           `)
-        }
-
-        )
-            .join('');
-        postsContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
+           `;
+        })
+        .join('');
+      postsContainer.insertAdjacentHTML('beforeend', listOfHtmlPosts);
     }
-
-    }else{
-        const err = await response.json();
-        throw new Error(err)
-    }
-
-})().catch(err =>{
-    console.log(err)
-    console.log("get my post")
+  } else {
+    const err = await response.json();
+    throw new Error(err);
+  }
+})().catch((err) => {
+  console.log(err);
+  console.log('get my post');
 });

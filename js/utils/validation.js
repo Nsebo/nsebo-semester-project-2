@@ -39,4 +39,4 @@ function isImage(url) {
     return imgRegex.test(url);
   }
 }
-export { validateEmail, validatePassword, isImage,isValidUrl };
+export { validateEmail, validatePassword, isImage, isValidUrl };
