@@ -79,10 +79,10 @@ async function getProfile() {
                     </div>
                     
                     <div class="pb-6">
-                        <div  class="font-semibold text-white block pb-1">${UserName}</div>
+                        <div  class="font-semibold text-white block pb-1">Username: ${UserName}</div>
                     </div>
                     <div class="pb-4">
-                        <div  class="font-semibold text-white block pb-1">${email}</div>
+                        <div  class="font-semibold text-white block pb-1">Email: ${email}</div>
                        
                     </div>
                     <div class="pb-4">

@@ -2,6 +2,7 @@ const { resolve } = require('path');
 
 export default {
   build: {
+    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       input: {
         home: resolve(__dirname, 'index.html'),
