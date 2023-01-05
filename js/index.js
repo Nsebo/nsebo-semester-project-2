@@ -54,6 +54,8 @@ const accessToken = getToken();
                              <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids}</p>
                         </div>
                     </div>
+                       <a href="single-listing.html?listing_id=${items.id}" class="justify-center capitalize inline-flex items-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+        BID</a>
                 </li>
            `;
       })
