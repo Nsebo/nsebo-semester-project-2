@@ -12,21 +12,43 @@ const listImgOne = document.querySelector('#listImgOne');
 const listImgTwo = document.querySelector('#listImgTwo');
 const listImgThree = document.querySelector('#listImgThree');
 const listingEndDate = document.querySelector('#listingEndDate');
+const listingImgInput = document.querySelectorAll('.imageInput');
 const accessToken = getToken();
 
 createListingForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value];
-  const listingImages = [listImgOne.value, listImgTwo.value, listImgThree.value];
 
-  const listingData = {
-    title: listingTitle.value.trim(),
-    description: listDescription.value.trim(),
-    tags: listingTags,
-    media: listingImages.length > 0 ? listingImages : null,
-    endsAt: listingEndDate.value,
-  };
+  const listingImages = [];
+
+  for (let i = 0; i < listingImgInput.length; i++){
+if(listingImgInput[i].value){
+  listingImages.push(listingImgInput[i].value)
+}
+  }
+  
+  let listingData;
+
+  if(listingImages.length ){
+    listingData =   {
+      title: listingTitle.value.trim(),
+      description: listDescription.value.trim(),
+      tags: listingTags,
+      media: listingImages.length,
+      endsAt: listingEndDate.value,
+    };
+  } else {
+    listingData =   {
+      title: listingTitle.value.trim(),
+      description: listDescription.value.trim(),
+      tags: listingTags,
+      endsAt: listingEndDate.value,
+    };
+
+  }
+
+
   console.log('listingData:', listingData);
 
   async function createListing() {

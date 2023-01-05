@@ -1,4 +1,4 @@
-import { API_BASE_URL, CREATE_USER_URL } from './settings/api';
+import { CREATE_USER_URL } from './settings/api';
 import { validateEmail, validatePassword } from './utils/validation';
 
 const signupForm = document.querySelector('#signup-form');

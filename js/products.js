@@ -19,7 +19,6 @@ async function getAllPosts(searchParams) {
   if (response.ok) {
     let posts = await response.json();
     let searchPosts = [];
-    let listOfHtmlPosts;
     if (searchParams) {
       console.log('searchParam:', searchParams);
       searchPosts = posts.filter(
@@ -33,14 +32,11 @@ async function getAllPosts(searchParams) {
       const data = displayPosts(searchPosts);
       postsContainer.insertAdjacentHTML('beforeend', data);
       console.log('listOfHtmlPosts: ', data);
-      return;
     } else {
       const data = displayPosts(posts);
       postsContainer.insertAdjacentHTML('beforeend', data);
       console.log('listOfHtmlPosts: ', posts);
     }
-
-    return;
   } else {
     const err = await response.json();
     throw new Error(err);

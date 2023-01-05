@@ -12,7 +12,8 @@ const buttonClose = document.querySelector('.btn-close');
 btn.addEventListener('click', () => {
   menu.classList.toggle('hidden');
   formSearch.classList.toggle('hidden', true);
-  buttonOpen.classList.toggle('hidden'), buttonClose.classList.toggle('hidden');
+  buttonOpen.classList.toggle('hidden'),
+      buttonClose.classList.toggle('hidden');
 });
 
 const buttonMenu = document.querySelector('button.search-menu');
@@ -46,7 +47,6 @@ window.onclick = function (event) {
 const logOutBtn = document.querySelector('#logOut');
 if (logOutBtn) {
   logOutBtn.addEventListener('click', function () {
-    console.log('I am clicked');
     clearStorage();
     window.location.replace('/login.html');
   });
