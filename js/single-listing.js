@@ -101,7 +101,7 @@ biddingForm.addEventListener('submit', function (event) {
     } else {
       const err = await response.json();
       console.log(err);
-      console.log('CREATE LIST FAILED');
+      console.log('PLACE BID FAILED');
     }
     biddingForm.reset();
   }

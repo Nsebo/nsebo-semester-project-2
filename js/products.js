@@ -79,8 +79,8 @@ function displayPosts(arr) {
                                 </h3>
                                 <p class="text-sm  text-gray-500">${postDescription}</p>
                                 <p class="text-sm  text-gray-500"> ${postTags}</p>
-                                <p class="text-sm text-gray-400"><ion-icon name="alarm-sharp"></ion-icon> ${postEndsAt}</p>
-                                <p class="text-medium  text-white"> <ion-icon name="flag-sharp"></ion-icon> ${bids} </p>
+                                <p class="text-sm text-gray-400"><i class='fas fa-calendar' style='font-size:24px'></i> ${postEndsAt}</p>
+                                <p class="text-medium  text-white"><i class='fas fa-flag' style='font-size:24px'></i> ${bids} </p>
                             </div>
                         </div>
                   <a href="single-listing.html?listing_id=${post.id}" class="justify-center capitalize inline-flex items-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
